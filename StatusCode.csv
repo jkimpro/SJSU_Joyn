@@ -1,0 +1,6 @@
+﻿Status Code,Message,
+0,OK,
+1,DB Connection Error,
+2,Parameter Missing,
+3,User Already Exists,
+4,No User Data,
