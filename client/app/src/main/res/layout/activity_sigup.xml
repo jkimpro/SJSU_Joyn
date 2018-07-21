@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#262631">
+
+    <LinearLayout
+        android:id="@+id/statusBar"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/inputForm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusBar">
+
+        <TextView
+            android:id="@+id/nameLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/noto_sans"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:text="Name"
+            android:textColor="#3b79cd"
+            tools:layout_editor_absoluteX="132dp"
+            tools:layout_editor_absoluteY="235dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameLabel"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="108dp">
+
+            <EditText
+                android:id="@+id/fnameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="First name"
+                android:inputType="textPersonName"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#999999"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="390dp" />
+
+            <EditText
+                android:id="@+id/lnameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Last name"
+                android:inputType="textPersonName"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#999999"
+                tools:layout_editor_absoluteX="140dp"
+                tools:layout_editor_absoluteY="381dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lblEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_weight="1"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:text="Email"
+            android:textColor="#3b79cd"
+            tools:layout_editor_absoluteX="166dp"
+            tools:layout_editor_absoluteY="456dp" />
+
+        <EditText
+            android:id="@+id/aplyEmailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:textColor="#FFFFFF"
+            tools:layout_editor_absoluteX="126dp"
+            tools:layout_editor_absoluteY="400dp" />
+
+        <TextView
+            android:id="@+id/lblPw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:text="Password"
+            android:textColor="#3b79cd"
+            tools:layout_editor_absoluteX="93dp"
+            tools:layout_editor_absoluteY="473dp" />
+
+        <EditText
+            android:id="@+id/aplyPwInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:textColor="#FFFFFF"
+            tools:layout_editor_absoluteX="98dp"
+            tools:layout_editor_absoluteY="493dp" />
+
+        <TextView
+            android:id="@+id/lblPwChk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:text="Confirm password"
+            android:textColor="#3b79cd"
+            tools:layout_editor_absoluteX="110dp"
+            tools:layout_editor_absoluteY="496dp" />
+
+        <EditText
+            android:id="@+id/pwChkInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:textColor="#FFFFFF"
+            tools:layout_editor_absoluteX="98dp"
+            tools:layout_editor_absoluteY="507dp" />
+
+        <TextView
+            android:id="@+id/lblBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:text="Birthday"
+            android:textColor="#3b79cd"
+            tools:layout_editor_absoluteX="90dp"
+            tools:layout_editor_absoluteY="516dp" />
+
+        <EditText
+            android:id="@+id/birthInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:ems="10"
+            android:inputType="date"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:textColor="#FFFFFF"
+            tools:layout_editor_absoluteX="98dp"
+            tools:layout_editor_absoluteY="518dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
