@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.media.MediaCodec;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +14,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.concurrent.ExecutionException;
 
@@ -79,20 +83,49 @@ public class SignUpActivity extends AppCompatActivity{
                             reqUrl += String.format("-%02d", Integer.parseInt(date.getText().toString()));
 
                             String resp = null;
+                            JSONObject json = null;
                             try {
                                 resp = new ServerConnect().execute(reqUrl).get();
+                                json = new JSONObject(resp);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             } catch (ExecutionException e) {
                                 e.printStackTrace();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
 
                             /* Check Server Response */
-                            Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
+                            int status = 1;
+                            try {
+                                status = json.getInt("status");
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            if (status > 0) {
+                                /* Error status code */
+                                switch (status) {
+                                    case 1: // DB Connection fail
+                                        Toast.makeText(getApplicationContext(), "Server Connection failed. Try Again", Toast.LENGTH_SHORT).show();
+                                        break;
+                                    case 3: // User Already Exists
+                                        Toast.makeText(SignUpActivity.this, "User Already Exists.", Toast.LENGTH_SHORT).show();
+                                        break;
+                                }
+                            } else {
+                                /* Join Success */
+                                UserProfileVO user = new UserProfileVO();
+                                try {
+                                    user.setUserID(json.getInt("user"));
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
 
-                            /* Join Success */
-
-                            /* Join Failed */
+                                /** TODO: change page to set favorite sport
+                                 *        set user as a parameter for favorite sport setting page
+                                 */
+                            }
                         }
                     }
                 }
