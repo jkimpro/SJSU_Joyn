@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     // LoginActivity login;
     EditText email, pw;
-    String url = "http://192.168.137.1:7777/signIn.php?flag=local";
+    String url = "http://seslab.sejong.ac.kr:7777/signIn.php?flag=local";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
