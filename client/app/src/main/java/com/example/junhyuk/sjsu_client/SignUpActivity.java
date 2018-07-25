@@ -1,5 +1,6 @@
 package com.example.junhyuk.sjsu_client;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaCodec;
 import android.os.Bundle;
@@ -118,13 +119,20 @@ public class SignUpActivity extends AppCompatActivity{
                                 UserProfileVO user = new UserProfileVO();
                                 try {
                                     user.setUserID(json.getInt("user"));
+                                    Toast.makeText(SignUpActivity.this, "Sign Up Succeed.", Toast.LENGTH_SHORT).show();
+                                    findViewById(R.id.joinBtn).setOnClickListener(
+                                            new Button.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    Intent intent_act = new Intent(getApplicationContext(), MainActivity.class);
+                                                    startActivity(intent_act);
+                                                }
+                                            }
+                                    );
+
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
-
-                                /** TODO: change page to set favorite sport
-                                 *        set user as a parameter for favorite sport setting page
-                                 */
                             }
                         }
                     }

@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                     }
                 } else {
-                    /* Join Success */
+                    /* login Success */
                     UserProfileVO user = new UserProfileVO();
                     try {
                         user.setUserID(json.getInt("user"));
@@ -120,11 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
                     // Display Pop Window
                     initiatePopupWindow();
-
-                    /** TODO: change page to set favorite sport
-                     *        set user as a parameter for favorite sport setting page
-                     */
                 }
+
             }
         });
 
@@ -141,17 +138,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //첫번째 팝업 이벤트===================================================================================================
     private void initiatePopupWindow() {
         try {
             //  LayoutInflater 객체와 시킴
             LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
             View layout = inflater.inflate(R.layout.popup_get_started, (ViewGroup) findViewById(R.id.popup_element));
 
             pwindo = new PopupWindow(layout, mWidthPixels - 320, mHeightPixels - 1000, true);
             pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
+
             btnClosePopup = (Button) layout.findViewById(R.id.btn_close_popup);
             btnClosePopup.setOnClickListener(cancel_button_click_listener);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -161,6 +160,9 @@ public class MainActivity extends AppCompatActivity {
             new Button.OnClickListener() {
                 public void onClick(View v) {
                     pwindo.dismiss();
+                    /**
+                     * TODO: Page direction to select favorite sports
+                     */
                 }
             };
 }
