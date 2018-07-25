@@ -2,10 +2,8 @@ package com.example.junhyuk.sjsu_client;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.media.MediaCodec;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,15 +21,22 @@ import java.util.concurrent.ExecutionException;
 
 public class SignUpActivity extends AppCompatActivity{
 
-    String url = "http://seslab.sejong.ac.kr:7777/signUp.php";
-    EditText fname, lname, email, pw, pwChk, date, year;
-    Spinner monthSpinner;
-
+    private String url = "http://seslab.sejong.ac.kr:7777/signUp.php";
+    private EditText fname, lname, email, pw, pwChk, date, year;
+    private Spinner monthSpinner;
+    private boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sigup);
+
+        /* Sign Up Status */
+        flag = false;
+
+        /* Set Focus Order */
+        findViewById(R.id.fnameInput).setNextFocusDownId(R.id.lnameInput);
+        findViewById(R.id.dateInput).setNextFocusDownId(R.id.yearInput);
 
         monthSpinner = findViewById(R.id.monthSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.month, android.R.layout.simple_spinner_item);
@@ -116,27 +121,28 @@ public class SignUpActivity extends AppCompatActivity{
                                 }
                             } else {
                                 /* Join Success */
-                                UserProfileVO user = new UserProfileVO();
-                                try {
-                                    user.setUserID(json.getInt("user"));
-                                    Toast.makeText(SignUpActivity.this, "Sign Up Succeed.", Toast.LENGTH_SHORT).show();
-                                    findViewById(R.id.joinBtn).setOnClickListener(
-                                            new Button.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent_act = new Intent(getApplicationContext(), MainActivity.class);
-                                                    startActivity(intent_act);
-                                                }
-                                            }
-                                    );
-
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
+                                Toast.makeText(SignUpActivity.this, "Sign Up Succeed. Please Login.", Toast.LENGTH_SHORT).show();
+                                flag = true;
+                                finish();
                             }
                         }
                     }
                 }
         );
+    }
+
+    @Override
+    public void finish() {
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+
+        if (email == null) {
+            email = findViewById(R.id.aplyEmailInput);
+        }
+        bundle.putString("email", email.getText().toString());
+        bundle.putBoolean("flag", flag);
+        intent.putExtras(bundle);
+        setResult(AppCompatActivity.RESULT_OK, intent);
+        super.finish();
     }
 }
