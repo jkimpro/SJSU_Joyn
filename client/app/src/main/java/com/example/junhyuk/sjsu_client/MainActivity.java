@@ -91,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
 
                 /* Login Success */
                 initiatePopupWindow();
-                /* Login Failed */
+
+
             }
         });
 
@@ -108,21 +109,36 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //첫번째 팝업 이벤트===================================================================================================
     private void initiatePopupWindow() {
         try {
             //  LayoutInflater 객체와 시킴
             LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
             View layout = inflater.inflate(R.layout.popup_get_started, (ViewGroup) findViewById(R.id.popup_element));
 
             pwindo = new PopupWindow(layout, mWidthPixels - 320, mHeightPixels - 1000, true);
             pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
+
             btnClosePopup = (Button) layout.findViewById(R.id.btn_close_popup);
             btnClosePopup.setOnClickListener(cancel_button_click_listener);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    //두번째 팝업 이벤트===================================================================================================
+    private void initiateSecondPopupWindow()
+    {
+        try {
+
+            // 두번째 팝업 이벤트 발생 관련 함수===========================================================================
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     Button.OnClickListener cancel_button_click_listener =
             new Button.OnClickListener() {
