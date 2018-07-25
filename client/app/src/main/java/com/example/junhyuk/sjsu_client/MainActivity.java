@@ -117,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-
                     // Display Pop Window
                     initiatePopupWindow();
                 }
@@ -159,10 +158,16 @@ public class MainActivity extends AppCompatActivity {
     Button.OnClickListener cancel_button_click_listener =
             new Button.OnClickListener() {
                 public void onClick(View v) {
-                    pwindo.dismiss();
+
+                    Intent intent_act = new Intent(getApplicationContext(), SelectSportsActivity.class);
+                    startActivity(intent_act);
                     /**
                      * TODO: Page direction to select favorite sports
                      */
+                    // Select Sports Activity 런칭 ============================================================================================
+
+
                 }
             };
+
 }
