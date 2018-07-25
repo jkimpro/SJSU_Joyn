@@ -1,31 +1,29 @@
 package com.example.junhyuk.sjsu_client;
 
-<<<<<<< HEAD
-import android.content.Context;
-import android.content.Intent;
 import android.graphics.Point;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-=======
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.JsonReader;
->>>>>>> master
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
-<<<<<<< HEAD
 import android.widget.PopupWindow;
+import android.widget.EditText;
+import android.widget.Toast;
+import org.json.JSONObject;
+
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,69 +31,19 @@ public class MainActivity extends AppCompatActivity {
     private Button btnLogin;
     private PopupWindow pwindo;
     private int mWidthPixels, mHeightPixels;
-=======
-import android.widget.EditText;
-import android.widget.Toast;
-
-import org.json.JSONObject;
-
-import java.util.concurrent.ExecutionException;
-
-public class MainActivity extends AppCompatActivity {
 
     // LoginActivity login;
-    EditText email, pw;
-    String url = "http://192.168.137.1:7777/signIn.php?flag=local";
->>>>>>> master
+    private EditText email, pw;
+    String url = "http://seslab.sejong.ac.kr:7777/signIn.php?flag=local";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         email = findViewById(R.id.emailInput);
         pw = findViewById(R.id.pwInput);
-
-        findViewById(R.id.loginBtn).setOnClickListener(
-                new Button.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        /* Send Data to Server */
-                        url += "&email=" + email.getText() + "&pw=" + pw.getText();
-                        String resp = null;
-                        try {
-                            resp = new ServerConnect().execute(url).get();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        } catch (ExecutionException e) {
-                            e.printStackTrace();
-                        }
-
-                        /* Check Server Response */
-                        Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
-
-                        /* Login Success */
-
-                        /* Login Failed */
-                    }
-                }
-        );
-
-        /* Sign Up Button Click Event : Page Redirect*/
-        findViewById(R.id.joinBtn).setOnClickListener(
-                new Button.OnClickListener() {
-<<<<<<< HEAD
-=======
-                    @Override
->>>>>>> master
-                    public void onClick(View v) {
-                        Intent intent_act = new Intent(getApplicationContext(), SignUpActivity.class);
-                        startActivity(intent_act);
-                    }
-                }
-        );
 
         WindowManager w = getWindowManager();
         Display d = w.getDefaultDisplay();
@@ -104,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         // since SDK_INT = 1;
         mWidthPixels = metrics.widthPixels;
         mHeightPixels = metrics.heightPixels;
-
+/* SDK 17 사용으로 필요없는 항목
         // 상태바와 메뉴바의 크기를 포함해서 재계산
         if (Build.VERSION.SDK_INT >= 14 && Build.VERSION.SDK_INT < 17)
             try {
@@ -112,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 mHeightPixels = (Integer) Display.class.getMethod("getRawHeight").invoke(d);
             } catch (Exception ignored) {
             }
+*/
         // 상태바와 메뉴바의 크기를 포함
         if (Build.VERSION.SDK_INT >= 17)
             try {
@@ -124,10 +73,39 @@ public class MainActivity extends AppCompatActivity {
 
         btnLogin = (Button) findViewById(R.id.loginBtn);
         btnLogin.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) {
+            @Override
+            public void onClick(View view) {
+                /* Send Data to Server */
+                url += "&email=" + email.getText() + "&pw=" + pw.getText();
+                String resp = null;
+                try {
+                    resp = new ServerConnect().execute(url).get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+
+                /* Check Server Response */
+                Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
+
+                /* Login Success */
                 initiatePopupWindow();
+                /* Login Failed */
             }
         });
+
+        /* Sign Up Button Click Event : Page Redirect*/
+        findViewById(R.id.joinBtn).setOnClickListener(
+                new Button.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent_act = new Intent(getApplicationContext(), SignUpActivity.class);
+                        startActivity(intent_act);
+                    }
+                }
+        );
+
     }
 
     private void initiatePopupWindow() {
