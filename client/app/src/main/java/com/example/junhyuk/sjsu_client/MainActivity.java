@@ -21,6 +21,8 @@ import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.concurrent.ExecutionException;
@@ -34,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
     // LoginActivity login;
     private EditText email, pw;
-    String url = "http://seslab.sejong.ac.kr:7777/signIn.php?flag=local";
+    private String url = "http://seslab.sejong.ac.kr:7777/signIn.php?flag=local";
+    private JSONObject json;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,18 +83,48 @@ public class MainActivity extends AppCompatActivity {
                 String resp = null;
                 try {
                     resp = new ServerConnect().execute(url).get();
+                    json = new JSONObject(resp);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (ExecutionException e) {
                     e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
 
                 /* Check Server Response */
-                Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
+                int status = 1;
+                try {
+                    status = json.getInt("status");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                if (status > 0) {
+                    /* Error status code */
+                    switch (status) {
+                        case 1: // DB Connection fail
+                            Toast.makeText(getApplicationContext(), "Server Connection failed. Try Again", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 4: // User Already Exists
+                            Toast.makeText(MainActivity.this, "Login Failed.", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                } else {
+                    /* Join Success */
+                    UserProfileVO user = new UserProfileVO();
+                    try {
+                        user.setUserID(json.getInt("user"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
-                /* Login Success */
-                initiatePopupWindow();
-                /* Login Failed */
+                    // Display Pop Window
+                    initiatePopupWindow();
+
+                    /** TODO: change page to set favorite sport
+                     *        set user as a parameter for favorite sport setting page
+                     */
+                }
             }
         });
 
