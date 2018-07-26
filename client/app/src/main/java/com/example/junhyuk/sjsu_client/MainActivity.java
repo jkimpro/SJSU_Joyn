@@ -130,11 +130,25 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent intent_act = new Intent(getApplicationContext(), SignUpActivity.class);
-                        startActivity(intent_act);
+                        startActivityForResult(intent_act, RESULT_FIRST_USER);
                     }
                 }
         );
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if (data.hasExtra("email")) {
+                if (data.getBooleanExtra("flag", false)) {
+                    email.setText(data.getStringExtra("email").toString());
+                    findViewById(R.id.pwInput).setFocusableInTouchMode(true);
+                    findViewById(R.id.pwInput).requestFocus();
+                }
+            }
+        }
     }
 
     //첫번째 팝업 이벤트===================================================================================================
