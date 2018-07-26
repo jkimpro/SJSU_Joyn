@@ -28,7 +28,6 @@ public class ServerConnect extends AsyncTask<String, Integer, String>{
             conn.setRequestMethod("GET");
             conn.setReadTimeout(15000);
             conn.setConnectTimeout(15000);
-
             conn.connect();
 
             InputStreamReader isr = new InputStreamReader(conn.getInputStream());
