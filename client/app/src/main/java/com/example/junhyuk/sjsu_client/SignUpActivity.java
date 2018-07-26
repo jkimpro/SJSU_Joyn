@@ -62,6 +62,7 @@ public class SignUpActivity extends AppCompatActivity{
                         /* Get Data from input */
                         fname = findViewById(R.id.fnameInput);
                         lname = findViewById(R.id.lnameInput);
+
                         email = findViewById(R.id.aplyEmailInput);
                         pw = findViewById(R.id.aplyPwInput);
                         pwChk = findViewById(R.id.pwChkInput);
@@ -104,6 +105,7 @@ public class SignUpActivity extends AppCompatActivity{
                             /* Check Server Response */
 //                            Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
                             int status = 1;
+
                             try {
                                 status = json.getInt("status");
                             } catch (JSONException e) {
@@ -128,7 +130,7 @@ public class SignUpActivity extends AppCompatActivity{
                         }
                     }
                 }
-        );
+                );
     }
 
     @Override
