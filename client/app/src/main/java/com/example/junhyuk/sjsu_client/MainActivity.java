@@ -122,16 +122,18 @@ public class MainActivity extends AppCompatActivity {
 
                     // Display Pop Window
                     initiatePopupWindow();
+
                 }
 
             }
         });
+
         /* Sign Up Button Click Event : Page Redirect*/
         findViewById(R.id.joinBtn).setOnClickListener(
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent_act = new Intent(getApplicationContext(), SignUpActivity.class);
+                        Intent intent_act = new Intent(MainActivity.this, SignUpActivity.class);
                         startActivityForResult(intent_act, RESULT_FIRST_USER);
                     }
                 }
@@ -175,8 +177,9 @@ public class MainActivity extends AppCompatActivity {
 
                 public void onClick(View v) {
                     pwindo.dismiss();
-//                    Intent intent_act = new Intent(getApplicationContext(), SelectSportsActivity.class);
-//                    startActivity(intent_act);
+                    Intent intent = new Intent(MainActivity.this, SelectSportsActivity.class);
+                    startActivity(intent);
+
                     /**
                      * TODO: Page direction to select favorite sports
                      */
