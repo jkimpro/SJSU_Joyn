@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         pw = findViewById(R.id.pwInput);
 
         TextView titletv = (TextView)findViewById(R.id.Title);
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "font.ttf");
+         Typeface typeface = Typeface.createFromAsset(getAssets(), "font.ttf");
 
         WindowManager w = getWindowManager();
         Display d = w.getDefaultDisplay();
