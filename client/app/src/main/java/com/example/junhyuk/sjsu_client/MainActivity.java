@@ -54,22 +54,16 @@ public class MainActivity extends AppCompatActivity {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "notosanscjkkr_black.otf");
         titletv.setTypeface(typeface);
 
+
         WindowManager w = getWindowManager();
         Display d = w.getDefaultDisplay();
         DisplayMetrics metrics = new DisplayMetrics();
         d.getMetrics(metrics);
+
         // since SDK_INT = 1;
         mWidthPixels = metrics.widthPixels;
         mHeightPixels = metrics.heightPixels;
-/* SDK 17 사용으로 필요없는 항목
-        // 상태바와 메뉴바의 크기를 포함해서 재계산
-        if (Build.VERSION.SDK_INT >= 14 && Build.VERSION.SDK_INT < 17)
-            try {
-                mWidthPixels = (Integer) Display.class.getMethod("getRawWidth").invoke(d);
-                mHeightPixels = (Integer) Display.class.getMethod("getRawHeight").invoke(d);
-            } catch (Exception ignored) {
-            }
-*/
+
         // 상태바와 메뉴바의 크기를 포함
         if (Build.VERSION.SDK_INT >= 17)
             try {
@@ -105,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
                 if (status > 0) {
                     /* Error status code */
                     switch (status) {
@@ -115,7 +110,8 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, "Login Failed.", Toast.LENGTH_SHORT).show();
                             break;
                     }
-                } else {
+                }
+                else {
                     /* login Success */
                     UserProfileVO user = new UserProfileVO();
                     try {
@@ -123,8 +119,10 @@ public class MainActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+
                     // Display Pop Window
                     initiatePopupWindow();
+
                 }
 
             }
@@ -135,12 +133,11 @@ public class MainActivity extends AppCompatActivity {
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent_act = new Intent(getApplicationContext(), SignUpActivity.class);
+                        Intent intent_act = new Intent(MainActivity.this, SignUpActivity.class);
                         startActivityForResult(intent_act, RESULT_FIRST_USER);
                     }
                 }
         );
-
     }
 
     @Override
@@ -177,10 +174,12 @@ public class MainActivity extends AppCompatActivity {
 
     Button.OnClickListener cancel_button_click_listener =
             new Button.OnClickListener() {
-                public void onClick(View v) {
 
-                    Intent intent_act = new Intent(getApplicationContext(), SelectSportsActivity.class);
-                    startActivity(intent_act);
+                public void onClick(View v) {
+                    pwindo.dismiss();
+                    Intent intent = new Intent(MainActivity.this, SelectSportsActivity.class);
+                    startActivity(intent);
+
                     /**
                      * TODO: Page direction to select favorite sports
                      */
@@ -189,5 +188,4 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             };
-
 }

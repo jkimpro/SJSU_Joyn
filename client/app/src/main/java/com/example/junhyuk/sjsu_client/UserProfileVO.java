@@ -48,4 +48,5 @@ public class UserProfileVO {
     public void setMatchID(int[] matchID) {
         this.matchID = matchID;
     }
+
 }
