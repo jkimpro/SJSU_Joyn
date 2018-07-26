@@ -21,7 +21,6 @@ public class ServerConnect extends AsyncTask<String, Integer, String>{
         String inputLine;
 
         try {
-
             URL myUrl = new URL(url);
 
             HttpURLConnection conn = (HttpURLConnection)myUrl.openConnection();

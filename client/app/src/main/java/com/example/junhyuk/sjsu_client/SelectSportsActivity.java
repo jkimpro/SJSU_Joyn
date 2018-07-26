@@ -1,5 +1,7 @@
 package com.example.junhyuk.sjsu_client;
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
@@ -17,8 +19,8 @@ public class SelectSportsActivity extends AppCompatActivity {
     private Button downScroll;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
         setContentView(R.layout.activity_sportschioce);
     }
 }

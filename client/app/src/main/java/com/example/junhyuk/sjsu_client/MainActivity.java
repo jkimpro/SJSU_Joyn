@@ -5,7 +5,6 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -54,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         TextView titletv = (TextView)findViewById(R.id.Title);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "notosanscjkkr_black.otf");
         titletv.setTypeface(typeface);
+
 
         WindowManager w = getWindowManager();
         Display d = w.getDefaultDisplay();
@@ -158,16 +158,31 @@ public class MainActivity extends AppCompatActivity {
             //  LayoutInflater 객체와 시킴
             LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View layout = inflater.inflate(R.layout.popup_get_started, (ViewGroup) findViewById(R.id.popup_element));
-            Log.e("df", "popup ");
 
             pwindo = new PopupWindow(layout, mWidthPixels - 320, mHeightPixels - 1000, true);
             pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
+
+            btnClosePopup = (Button) layout.findViewById(R.id.btn_close_popup);
+            btnClosePopup.setOnClickListener(cancel_button_click_listener);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    Button.OnClickListener cancel_button_click_listener =
+            new Button.OnClickListener() {
+
+                public void onClick(View v) {
+                    pwindo.dismiss();
+//                    Intent intent_act = new Intent(getApplicationContext(), SelectSportsActivity.class);
+//                    startActivity(intent_act);
+                    /**
+                     * TODO: Page direction to select favorite sports
+                     */
+                    // Select Sports Activity 런칭 ============================================================================================
+
+
+                }
+            };
 }
-
-
-
