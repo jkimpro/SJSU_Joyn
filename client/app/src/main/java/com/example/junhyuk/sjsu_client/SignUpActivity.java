@@ -141,6 +141,7 @@ public class SignUpActivity extends AppCompatActivity{
         if (email == null) {
             email = findViewById(R.id.aplyEmailInput);
         }
+
         bundle.putString("email", email.getText().toString());
         bundle.putBoolean("flag", flag);
         intent.putExtras(bundle);

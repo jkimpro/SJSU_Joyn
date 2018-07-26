@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -58,18 +59,11 @@ public class MainActivity extends AppCompatActivity {
         Display d = w.getDefaultDisplay();
         DisplayMetrics metrics = new DisplayMetrics();
         d.getMetrics(metrics);
+
         // since SDK_INT = 1;
         mWidthPixels = metrics.widthPixels;
         mHeightPixels = metrics.heightPixels;
-/* SDK 17 사용으로 필요없는 항목
-        // 상태바와 메뉴바의 크기를 포함해서 재계산
-        if (Build.VERSION.SDK_INT >= 14 && Build.VERSION.SDK_INT < 17)
-            try {
-                mWidthPixels = (Integer) Display.class.getMethod("getRawWidth").invoke(d);
-                mHeightPixels = (Integer) Display.class.getMethod("getRawHeight").invoke(d);
-            } catch (Exception ignored) {
-            }
-*/
+
         // 상태바와 메뉴바의 크기를 포함
         if (Build.VERSION.SDK_INT >= 17)
             try {
@@ -105,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
                 if (status > 0) {
                     /* Error status code */
                     switch (status) {
@@ -115,7 +110,8 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, "Login Failed.", Toast.LENGTH_SHORT).show();
                             break;
                     }
-                } else {
+                }
+                else {
                     /* login Success */
                     UserProfileVO user = new UserProfileVO();
                     try {
@@ -123,13 +119,13 @@ public class MainActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+
                     // Display Pop Window
                     initiatePopupWindow();
                 }
 
             }
         });
-
         /* Sign Up Button Click Event : Page Redirect*/
         findViewById(R.id.joinBtn).setOnClickListener(
                 new Button.OnClickListener() {
@@ -140,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
-
     }
 
     @Override
@@ -163,31 +158,16 @@ public class MainActivity extends AppCompatActivity {
             //  LayoutInflater 객체와 시킴
             LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View layout = inflater.inflate(R.layout.popup_get_started, (ViewGroup) findViewById(R.id.popup_element));
+            Log.e("df", "popup ");
 
             pwindo = new PopupWindow(layout, mWidthPixels - 320, mHeightPixels - 1000, true);
             pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
-
-            btnClosePopup = (Button) layout.findViewById(R.id.btn_close_popup);
-            btnClosePopup.setOnClickListener(cancel_button_click_listener);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    Button.OnClickListener cancel_button_click_listener =
-            new Button.OnClickListener() {
-                public void onClick(View v) {
-
-                    Intent intent_act = new Intent(getApplicationContext(), SelectSportsActivity.class);
-                    startActivity(intent_act);
-                    /**
-                     * TODO: Page direction to select favorite sports
-                     */
-                    // Select Sports Activity 런칭 ============================================================================================
-
-
-                }
-            };
-
 }
+
+
+
