@@ -21,6 +21,6 @@ public class SelectSportsActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        setContentView(R.layout.activity_sigup);
+        setContentView(R.layout.activity_sportschioce);
     }
 }

@@ -59,18 +59,11 @@ public class MainActivity extends AppCompatActivity {
         Display d = w.getDefaultDisplay();
         DisplayMetrics metrics = new DisplayMetrics();
         d.getMetrics(metrics);
+
         // since SDK_INT = 1;
         mWidthPixels = metrics.widthPixels;
         mHeightPixels = metrics.heightPixels;
-/* SDK 17 사용으로 필요없는 항목
-        // 상태바와 메뉴바의 크기를 포함해서 재계산
-        if (Build.VERSION.SDK_INT >= 14 && Build.VERSION.SDK_INT < 17)
-            try {
-                mWidthPixels = (Integer) Display.class.getMethod("getRawWidth").invoke(d);
-                mHeightPixels = (Integer) Display.class.getMethod("getRawHeight").invoke(d);
-            } catch (Exception ignored) {
-            }
-*/
+
         // 상태바와 메뉴바의 크기를 포함
         if (Build.VERSION.SDK_INT >= 17)
             try {
@@ -106,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
                 if (status > 0) {
                     /* Error status code */
                     switch (status) {
@@ -116,7 +110,8 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, "Login Failed.", Toast.LENGTH_SHORT).show();
                             break;
                     }
-                } else {
+                }
+                else {
                     /* login Success */
                     UserProfileVO user = new UserProfileVO();
                     try {
@@ -124,13 +119,13 @@ public class MainActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+
                     // Display Pop Window
                     initiatePopupWindow();
                 }
 
             }
         });
-
         /* Sign Up Button Click Event : Page Redirect*/
         findViewById(R.id.joinBtn).setOnClickListener(
                 new Button.OnClickListener() {
@@ -141,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
-
     }
 
     @Override
@@ -191,5 +185,4 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             };
-
 }
