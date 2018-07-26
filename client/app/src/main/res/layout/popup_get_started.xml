@@ -15,8 +15,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/explanation"
-            android:scaleType="centerCrop"/>
+            android:src="@drawable/explanation_popup"
+            android:scaleType="centerCrop" />
     </android.support.v7.widget.CardView>
 
 
@@ -36,8 +36,7 @@
             android:layout_height="match_parent"
             android:background="@color/blue"
             android:text="GET STARTED"
-            android:textColor="@color/white"
-            android:src="@drawable/explanation" />
+            android:textColor="@color/white" />
     </android.support.v7.widget.CardView>
 
 
