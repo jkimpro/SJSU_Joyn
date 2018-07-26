@@ -1,6 +1,7 @@
 package com.example.junhyuk.sjsu_client;
 
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -20,6 +21,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -47,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
         email = findViewById(R.id.emailInput);
         pw = findViewById(R.id.pwInput);
+
+        TextView titletv = (TextView)findViewById(R.id.Title);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "font.ttf");
 
         WindowManager w = getWindowManager();
         Display d = w.getDefaultDisplay();
