@@ -71,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
                 Display.class.getMethod("getRealSize", Point.class).invoke(d, realSize);
                 mWidthPixels = realSize.x;
                 mHeightPixels = realSize.y;
-            } catch (Exception ignored) {
+            }
+            catch (Exception ignored) {
             }
 
         btnLogin = (Button) findViewById(R.id.loginBtn);
