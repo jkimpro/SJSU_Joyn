@@ -19,16 +19,10 @@ public class SelectSportsActivity extends AppCompatActivity {
     private Button downScroll;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sportschioce);
-
-        //버튼 선언
-
-
-
-        //그 이외 사항들
-
 
     }
 }
