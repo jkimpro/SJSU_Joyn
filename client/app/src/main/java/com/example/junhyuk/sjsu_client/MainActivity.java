@@ -181,12 +181,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, SelectSportsActivity.class);
                     startActivity(intent);
 
-                    /**
-                     * TODO: Page direction to select favorite sports
-                     */
                     // Select Sports Activity 런칭 ============================================================================================
-
-
                 }
             };
 }

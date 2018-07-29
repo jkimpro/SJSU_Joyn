@@ -2,9 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/activity_sportschoice">
+    android:background="@drawable/activity_sportschoice"
+    android:layout_centerHorizontal="true">
 
     <LinearLayout
+        android:id="@+id/sprotselect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -16,7 +18,6 @@
             android:layout_height="20dp"
             android:layout_gravity="center"
             android:background="@drawable/ic_keyboard_arrow_up_black_24dp"/>
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,6 +35,7 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/tennisBt"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1" />
@@ -55,6 +57,7 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/basketballBt"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1" />
@@ -76,6 +79,7 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/soccerBt"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1" />
@@ -99,6 +103,7 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/workoutBt"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1" />
@@ -120,6 +125,7 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/badmintonBt"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1" />
@@ -141,6 +147,7 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/joggingBt"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1" />
@@ -164,6 +171,7 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/yogaBt"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1" />
@@ -185,6 +193,7 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/cyclingBt"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1" />
@@ -206,6 +215,7 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/baseballBt"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1" />
@@ -225,10 +235,11 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/bowlingBt"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1" />
@@ -250,6 +261,7 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/billiardsBt"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1" />
@@ -271,6 +283,7 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/surfingBt"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="1" />
@@ -291,4 +304,24 @@
             android:background="@drawable/ic_keyboard_arrow_down_black_24dp"/>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/okButtonLayout"
+        android:layout_width="341dp"
+        android:layout_height="39dp"
+
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="520dp"
+        >
+
+        <Button
+            android:id="@+id/okBt"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="150dp"
+            android:text="OK" />
+    </LinearLayout>
+
+
 </RelativeLayout>

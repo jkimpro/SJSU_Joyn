@@ -21,15 +21,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SelectRoomActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-
         <activity android:name=".SelectSportsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,6 +30,14 @@
         </activity>
 
         <activity android:name=".SignUpActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SelectRoomActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
