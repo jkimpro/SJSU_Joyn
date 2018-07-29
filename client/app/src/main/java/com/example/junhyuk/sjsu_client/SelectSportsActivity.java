@@ -8,25 +8,25 @@ import android.view.View;
 import android.widget.Button;
 
 public class SelectSportsActivity extends AppCompatActivity {
-    /** 1 = Tennis
-        2 = Basketball
-        3 = Soccer
-        4 = Workout
-        5 = Badminton
-        6 = Jogging
-        7 = Yoga
-        8 = Cycling
-        9 = Baseball
-        10 = Bowling
-        11 = Billiard
-        12 = Surfing
+    /**
+     1 = Tennis
+     2 = Basketball
+     3 = Soccer
+     4 = Workout
+     5 = Badminton
+     6 = Jogging
+     7 = Yoga
+     8 = Cycling
+     9 = Baseball
+     10 = Bowling
+     11 = Billiard
+     12 = Surfing
     * */
     boolean [] isSelected;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         isSelected = new boolean[12];
         for(int i =0; i<12; i++)
         {
