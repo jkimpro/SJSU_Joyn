@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -28,6 +29,9 @@ public class SelectSportsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         isSelected = new boolean[12];
+
+        Log.e("SelectSportsActivity","Launch");
+
         for(int i =0; i<12; i++)
         {
             isSelected[i] = false;
@@ -35,6 +39,8 @@ public class SelectSportsActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sportschioce);
+
+        Log.e("SelectSportsActivity","Image Go");
 
         findViewById(R.id.tennisBt).setOnClickListener(optionSelectListener);
         findViewById(R.id.baseballBt).setOnClickListener(optionSelectListener);
@@ -49,15 +55,14 @@ public class SelectSportsActivity extends AppCompatActivity {
         findViewById(R.id.billiardsBt).setOnClickListener(optionSelectListener);
         findViewById(R.id.surfingBt).setOnClickListener(optionSelectListener);
 
-        //findViewById(R.id.okBt).setOnClickListener(isOkListener); //오케이 클릭 리스너
+       // findViewById(R.id.okBt).setOnClickListener(isOkListener); //오케이 클릭 리스너
 
-        //up down scroll listener.
+
 
     }
 
     Button.OnClickListener optionSelectListener =
             new Button.OnClickListener() {
-
                 public void onClick(View v) {
                     switch(v.getId())
                     {
