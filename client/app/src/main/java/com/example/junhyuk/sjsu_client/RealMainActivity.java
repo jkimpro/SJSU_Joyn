@@ -13,12 +13,13 @@ public class RealMainActivity extends AppCompatActivity{
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 4;
+
         Bitmap bitmapImage = BitmapFactory.decodeResource(getResources(), R.drawable.main_page, options);
         ImageView imageView = (ImageView)findViewById(R.id.back);
         imageView.setImageBitmap(bitmapImage);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_real_main);
-        
+
     }
 }

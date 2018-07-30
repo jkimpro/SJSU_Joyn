@@ -98,6 +98,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/time"
                 android:layout_width="900px"
                 android:layout_height="100px"
                 android:layout_marginLeft="267px"
@@ -108,6 +109,7 @@
                 android:textSize="80px" />
 
             <TextView
+                android:id="@+id/date"
                 android:layout_width="900px"
                 android:layout_height="100px"
                 android:layout_marginLeft="267px"
@@ -129,6 +131,7 @@
                 android:layout_height="200px">
 
                 <TextView
+                    android:id="@+id/playerNumber"
                     android:layout_width="900px"
                     android:layout_height="100px"
                     android:layout_marginLeft="267px"
