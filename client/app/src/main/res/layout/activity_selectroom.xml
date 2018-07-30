@@ -3,73 +3,123 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/activity_selectroom">
+   >
 
-        <ImageButton
-            android:id="@+id/push_button1"
-            android:layout_width="57dp"
-            android:layout_height="57dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="216dp"
-            android:layout_marginStart="49dp"
-            android:background="@drawable/button_bg_round"
-            android:padding="15px"
-            android:text="" />
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/select_room8"/>
 
-        <ImageButton
-            android:id="@+id/push_button2"
-            android:layout_width="57dp"
-            android:layout_height="57dp"
-
-            android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/push_button1"
-            android:layout_marginStart="132dp"
-            android:background="@drawable/button_bg_round"
-            android:padding="15px"
-            android:text=""/>
-
-        <ImageButton
-            android:id="@+id/push_button4"
-            android:layout_width="57dp"
-            android:layout_height="57dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/push_button1"
-            android:layout_marginEnd="49dp"
-            android:background="@drawable/button_bg_round"
-            android:padding="15px"
-            android:text="" />
-
-        <ImageButton
-            android:id="@+id/push_button"
-            android:layout_width="57dp"
-            android:layout_height="57dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/push_button1"
-            android:layout_marginEnd="138dp"
-            android:background="@drawable/button_bg_round"
-            android:padding="15px"
-            android:text="" />
-        <!--
+    <!-- 최상단 레이아웃 총높이 : 2880-->
+    <LinearLayout
+        android:layout_width="1440px"
+        android:layout_height="225px">
         <TextView
-            android:id="@+id/appName"
-            android:layout_width="114dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="70px"
-            android:text="TextView" />
+            android:layout_width="990px"
+            android:layout_height="225px"
+            android:layout_marginLeft="225px"
+            android:text="JOYN"
+            android:textSize="120px"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            />
 
-        <TextView
-            android:id="@+id/options"
-            android:layout_width="114dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="109dp"
-            android:text="TextView" />
+        <ImageButton
+            android:id="@+id/my_status"
+            android:layout_width="225px"
+            android:layout_height="225px"
 
-        -->
+            />
+    </LinearLayout>
+
+    <!--중간 레이아웃-->
+    <LinearLayout
+        android:layout_width="1440px"
+        android:layout_height="2200px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="225px">
+        <LinearLayout
+            android:layout_marginTop="100px"
+            android:layout_width="1440px"
+            android:layout_height="55px">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="OPEN GAME"
+                android:textSize="50px"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="1440px"
+            android:layout_height="100px">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--중하단 레이아웃-->
+    <LinearLayout
+        android:layout_width="1440px"
+        android:layout_height="455px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="2425px">
+
+
+    </LinearLayout>
+
+    <!--최하단 레이아웃-->
+
+
+    <!--
+    <ImageButton
+        android:id="@+id/friendBt1"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="216dp"
+        android:layout_marginStart="49dp"
+        android:background="@drawable/button_bg_round"
+        android:padding="15px"
+        android:text="" />
+
+    <ImageButton
+        android:id="@+id/push_button2"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="132dp"
+        android:background="@drawable/button_bg_round"
+        android:padding="15px"
+        android:text=""/>
+
+    <ImageButton
+        android:id="@+id/push_button4"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/push_button1"
+        android:layout_marginEnd="49dp"
+        android:background="@drawable/button_bg_round"
+        android:padding="15px"
+        android:text="" />
+
+    <ImageButton
+        android:id="@+id/push_button"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/push_button1"
+        android:layout_marginEnd="138dp"
+        android:background="@drawable/button_bg_round"
+        android:padding="15px"
+        android:text="" />
 
     <ImageButton
         android:id="@+id/leftButton"
@@ -131,5 +181,6 @@
         android:background="@drawable/button_bg_round"
         android:padding="15px"
         android:text="" />
+-->
 
 </RelativeLayout>

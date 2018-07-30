@@ -1,26 +1,22 @@
 package com.example.junhyuk.sjsu_client;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.content.ContentValues;
-import android.content.Context;
-import android.content.Intent;
-import android.os.AsyncTask;
-
-import android.os.Bundle;
-import android.util.JsonReader;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.PopupWindow;
 import android.widget.EditText;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -53,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         TextView titletv = (TextView)findViewById(R.id.Title);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "notosanscjkkr_black.otf");
         titletv.setTypeface(typeface);
-
 
         WindowManager w = getWindowManager();
         Display d = w.getDefaultDisplay();

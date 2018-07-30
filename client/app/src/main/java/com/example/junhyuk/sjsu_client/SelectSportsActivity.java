@@ -1,8 +1,5 @@
 package com.example.junhyuk.sjsu_client;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -28,10 +25,9 @@ public class SelectSportsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         isSelected = new boolean[12];
-
         Log.e("SelectSportsActivity","Launch");
-
         for(int i =0; i<12; i++)
         {
             isSelected[i] = false;
@@ -54,10 +50,7 @@ public class SelectSportsActivity extends AppCompatActivity {
         findViewById(R.id.bowlingBt).setOnClickListener(optionSelectListener);
         findViewById(R.id.billiardsBt).setOnClickListener(optionSelectListener);
         findViewById(R.id.surfingBt).setOnClickListener(optionSelectListener);
-
        // findViewById(R.id.okBt).setOnClickListener(isOkListener); //오케이 클릭 리스너
-
-
 
     }
 
@@ -217,9 +210,10 @@ public class SelectSportsActivity extends AppCompatActivity {
                      * TODO: 서버로 선택된 목록 데이터 종합 및 송신
                      * 받아온 데이터들을 여기서 종합한 후에
                      * 다음페이지로 화면 전환
+
                      */
 
-                    //Intent intent = new Intent(SelectSportsActivity.this, SelectRoomActivity.class);
+                    //Intent intent = new Intent(SelectSportsActivity.this, RealMainActivity.class);
                     //startActivity(intent);
                     //-> 다음페이지로 이동
                 }
