@@ -101,12 +101,12 @@
                 android:id="@+id/time"
                 android:layout_width="900px"
                 android:layout_height="100px"
-                android:layout_marginLeft="267px"
-                android:layout_marginTop="65px"
+                android:layout_marginLeft="265px"
+                android:layout_marginTop="56px"
                 android:text="1:00pm - 4:00pm"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textSize="80px" />
+                android:textSize="81px" />
 
             <TextView
                 android:id="@+id/date"

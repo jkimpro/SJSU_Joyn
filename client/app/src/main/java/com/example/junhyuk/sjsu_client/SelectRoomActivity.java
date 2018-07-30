@@ -11,7 +11,6 @@ public class SelectRoomActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 4;
         Bitmap bitmapImage = BitmapFactory.decodeResource(getResources(), R.drawable.select_room8, options);
