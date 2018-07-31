@@ -1,9 +1,14 @@
 package com.example.junhyuk.sjsu_client;
+
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class SelectSportsActivity extends AppCompatActivity {
     /**
@@ -26,16 +31,22 @@ public class SelectSportsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sportschioce);
+
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inSampleSize = 4;
+        Bitmap bitmapImage = BitmapFactory.decodeResource(getResources(), R.drawable.select_sports4, options);
+        ImageView imageView = (ImageView)findViewById(R.id.back);
+        imageView.setImageBitmap(bitmapImage);
+
+
         isSelected = new boolean[12];
         Log.e("SelectSportsActivity","Launch");
         for(int i =0; i<12; i++)
         {
             isSelected[i] = false;
         }
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sportschioce);
-
         Log.e("SelectSportsActivity","Image Go");
 
         findViewById(R.id.tennisBt).setOnClickListener(optionSelectListener);
@@ -50,7 +61,9 @@ public class SelectSportsActivity extends AppCompatActivity {
         findViewById(R.id.bowlingBt).setOnClickListener(optionSelectListener);
         findViewById(R.id.billiardsBt).setOnClickListener(optionSelectListener);
         findViewById(R.id.surfingBt).setOnClickListener(optionSelectListener);
-       // findViewById(R.id.okBt).setOnClickListener(isOkListener); //오케이 클릭 리스너
+
+        //오케이 클릭 리스너
+        findViewById(R.id.okBt).setOnClickListener(isOkListener);
 
     }
 
@@ -198,24 +211,17 @@ public class SelectSportsActivity extends AppCompatActivity {
             };
     */
 
-
     Button.OnClickListener isOkListener =
             new Button.OnClickListener(){
                 public void onClick(View v) {
 
-                    //isSelect 배열을 통하여 선택된것이 무엇인지를 확인할 것.
-                    //선택된것이 무엇이 있는지 확인하고, 화면 전환 -> isSelect Button 이 있음
+                    Log.e("SelectSportsActivity","Mouse Event");
 
-                    /**
-                     * TODO: 서버로 선택된 목록 데이터 종합 및 송신
-                     * 받아온 데이터들을 여기서 종합한 후에
-                     * 다음페이지로 화면 전환
+                    Intent intent = new Intent(SelectSportsActivity.this, RealMainActivity.class);
+                    startActivity(intent);
 
-                     */
+                    Log.e("SelectSportsActivity","Mouse Event");
 
-                    //Intent intent = new Intent(SelectSportsActivity.this, RealMainActivity.class);
-                    //startActivity(intent);
-                    //-> 다음페이지로 이동
                 }
             };
 
