@@ -21,9 +21,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".SignUpActivity">
+        </activity>
 
-        <activity android:name=".SelectSportsActivity"/>
+        <activity android:name=".SelectSportsActivity">
+        </activity>
+
+        <activity android:name=".FriendListActivity">
+        </activity>
 
         <activity android:name=".CalendarViewActivity"/>
 
