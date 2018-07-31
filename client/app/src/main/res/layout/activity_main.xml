@@ -8,75 +8,104 @@
     <ImageView
         android:id="@+id/back"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundimage2" />
+
+    <ImageView
+        android:layout_width="450px"
+        android:layout_height="450px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="480px"
+        android:background="@drawable/logo"
+        android:elevation="100px" />
 
     <EditText
         android:id="@+id/emailInput"
-        android:layout_width="262dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="345dp"
-        android:layout_marginLeft="74dp"
-        android:layout_marginRight="74dp"
-        android:backgroundTint="@color/lightBlue"
-        android:hint="                        E-mail Address"
-        android:textColorHint="@color/lightBlue"
+        android:layout_width="900px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1200px"
+        android:backgroundTint="@color/LightBlue"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:gravity="center"
+        android:hint="E-mail Address"
         android:inputType="textEmailAddress"
-        android:textColor="@color/lightBlue"
-        android:textSize="14dp"
-        android:fontFamily="@font/notosanscjkkr_medium"/>
+        android:textColor="@color/LightBlue"
+        android:textColorHint="@color/LightBlue"
+        android:textSize="70px" />
 
 
     <EditText
         android:id="@+id/pwInput"
-        android:layout_width="262dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="395dp"
-        android:layout_marginLeft="74dp"
-        android:layout_marginRight="74dp"
-        android:backgroundTint="@color/lightBlue"
-        android:hint="                            Password"
-        android:textColorHint="@color/lightBlue"
+        android:layout_width="900px"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1380px"
+        android:backgroundTint="@color/LightBlue"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:gravity="center"
+        android:hint="Password"
         android:inputType="textPassword"
-        android:textColor="@color/lightBlue"
-        android:textSize="14dp"
-        android:fontFamily="@font/notosanscjkkr_medium"/>
+        android:textColor="@color/LightBlue"
+        android:textColorHint="@color/LightBlue"
+        android:textSize="70px" />
 
     <Button
         android:id="@+id/loginBtn"
-        android:layout_width="266dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="455dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginRight="72dp"
+        android:layout_width="900px"
+        android:layout_height="160px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1590px"
         android:background="@drawable/round_button"
+        android:fontFamily="@font/notosanscjkkr_medium"
         android:text="Login"
         android:textAllCaps="false"
-        android:textColor="@color/lightBlue"
-        android:fontFamily="@font/notosanscjkkr_medium"/>
+        android:textColor="@color/LightBlue"
+        android:textSize="70px"
+        android:gravity="center"/>
 
     <Button
-        android:id="@+id/joinBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="730dp"
-        android:layout_marginLeft="82dp"
-        android:background="#00000000"
-        android:fontFamily="@font/notosanscjkkr_medium"
-        android:text="Sign Up /"
-        android:textAllCaps="false"
-        android:textColor="@color/lightgray"
-        android:textSize="18dp"/>
+        android:layout_width="900px"
+        android:layout_height="160px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2000px"
+        android:background="@drawable/twitter" />
 
     <Button
-        android:id="@+id/findPw"
+        android:layout_width="900px"
+        android:layout_height="160px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2200px"
+        android:background="@drawable/facebook" />
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="730dp"
-        android:layout_marginLeft="174dp"
-        android:background="#00000000"
-        android:fontFamily="@font/notosanscjkkr_medium"
-        android:text="Forgot Password?"
-        android:textAllCaps="false"
-        android:textColor="@color/lightgray"
-        android:textSize="18dp"/>
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2600px">
+
+        <Button
+            android:id="@+id/joinBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:text="Sign Up /"
+            android:textAllCaps="false"
+            android:textColor="@color/Gray"
+            android:textSize="70px" />
+
+        <Button
+            android:id="@+id/findPw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="#00000000"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:text="Forgot Password?"
+            android:textAllCaps="false"
+            android:textColor="@color/Gray"
+            android:textSize="70px" />
+    </LinearLayout>
 </RelativeLayout>

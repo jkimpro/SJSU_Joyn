@@ -24,18 +24,13 @@
         <activity android:name=".SignUpActivity">
         </activity>
 
-        <activity android:name=".SelectSportsActivity">
-        </activity>
+        <activity android:name=".SelectSportsActivity"/>
 
-        <activity android:name=".FriendListActivity">
-        </activity>
+        <activity android:name=".FriendListActivity"/>
 
         <activity android:name=".CalendarViewActivity"/>
 
         <activity android:name=".PopUpActivity"/>
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

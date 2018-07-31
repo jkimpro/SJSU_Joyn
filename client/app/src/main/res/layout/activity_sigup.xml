@@ -1,243 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#262631">
+    android:fitsSystemWindows="true">
 
-    <LinearLayout
-        android:id="@+id/statusBar"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundimage2" />
 
-    <LinearLayout
-        android:id="@+id/inputForm"
-        android:layout_width="0dp"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statusBar">
+        android:background="#00000000"
+        android:minHeight="?attr/actionBarSize">
 
         <TextView
-            android:id="@+id/nameLabel"
-            android:layout_width="match_parent"
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:fontFamily="@font/noto_sans"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
-            android:text="Name"
-            android:textColor="#3b79cd"
-            tools:layout_editor_absoluteX="132dp"
-            tools:layout_editor_absoluteY="235dp" />
+            android:layout_gravity="center"
+            android:fontFamily="@font/notosanscjkkr_regular"
+            android:text="Sign up"
+            android:textSize="90px" />
+    </android.support.v7.widget.Toolbar>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameLabel"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="108dp">
+    <TextView
+        android:id="@+id/nameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="525px"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:text="Name"
+        android:textColor="@color/LightGray"
+        android:textSize="60px" />
 
-            <EditText
-                android:id="@+id/fnameInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="First name"
-                android:inputType="textPersonName"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#999999"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="390dp" />
+    <EditText
+        android:id="@+id/fnameInput"
+        android:layout_width="625px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="610px"
+        android:backgroundTint="@color/LightGray"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:hint="First name"
+        android:inputType="textPersonName"
+        android:textColor="@color/Black"
+        android:textColorHint="@color/LightGray"
+        android:textSize="75px" />
 
-            <EditText
-                android:id="@+id/lnameInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="5dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Last name"
-                android:inputType="textPersonName"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#999999"
-                tools:layout_editor_absoluteX="140dp"
-                tools:layout_editor_absoluteY="381dp" />
+    <EditText
+        android:id="@+id/lnameInput"
+        android:layout_width="625px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="735px"
+        android:layout_marginTop="610px"
+        android:backgroundTint="@color/LightGray"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:hint="Last name"
+        android:inputType="textPersonName"
+        android:textColor="@color/Black"
+        android:textColorHint="@color/LightGray"
+        android:textSize="75px" />
 
-        </LinearLayout>
+    <TextView
+        android:id="@+id/lblEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="830px"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:text="E-mail"
+        android:textColor="@color/LightGray"
+        android:textSize="60px" />
 
-        <TextView
-            android:id="@+id/lblEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:layout_weight="1"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
-            android:text="Email"
-            android:textColor="#3b79cd"
-            tools:layout_editor_absoluteX="166dp"
-            tools:layout_editor_absoluteY="456dp" />
+    <EditText
+        android:id="@+id/aplyEmailInput"
+        android:layout_width="1280px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="915px"
+        android:backgroundTint="@color/LightGray"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/Black"
+        android:textSize="75px" />
 
-        <EditText
-            android:id="@+id/aplyEmailInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
-            android:textColor="#FFFFFF"
-            tools:layout_editor_absoluteX="126dp"
-            tools:layout_editor_absoluteY="400dp" />
+    <TextView
+        android:layout_width="260px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1100px"
+        android:layout_marginTop="915px"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:text="\@email.com"
+        android:textColor="@color/LightGray"
+        android:textSize="75px" />
 
-        <TextView
-            android:id="@+id/lblPw"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
-            android:text="Password"
-            android:textColor="#3b79cd"
-            tools:layout_editor_absoluteX="93dp"
-            tools:layout_editor_absoluteY="473dp" />
+    <TextView
+        android:id="@+id/lblPw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="1135px"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:text="Password"
+        android:textColor="@color/LightGray"
+        android:textSize="60px" />
 
-        <EditText
-            android:id="@+id/aplyPwInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
-            android:textColor="#FFFFFF"
-            tools:layout_editor_absoluteX="98dp"
-            tools:layout_editor_absoluteY="493dp" />
+    <EditText
+        android:id="@+id/aplyPwInput"
+        android:layout_width="1280px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="1220px"
+        android:backgroundTint="@color/LightGray"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:inputType="textPassword"
+        android:textColor="@color/Black"
+        android:textSize="75px" />
 
-        <TextView
-            android:id="@+id/lblPwChk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
-            android:text="Confirm password"
-            android:textColor="#3b79cd"
-            tools:layout_editor_absoluteX="110dp"
-            tools:layout_editor_absoluteY="496dp" />
+    <TextView
+        android:id="@+id/lblPwChk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="1440px"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:text="Confirm password"
+        android:textColor="@color/LightGray"
+        android:textSize="60px" />
 
-        <EditText
-            android:id="@+id/pwChkInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
-            android:textColor="#FFFFFF"
-            tools:layout_editor_absoluteX="98dp"
-            tools:layout_editor_absoluteY="507dp" />
+    <EditText
+        android:id="@+id/pwChkInput"
+        android:layout_width="1280px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="1525px"
+        android:backgroundTint="@color/LightGray"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:inputType="textPassword"
+        android:textColor="@color/Black"
+        android:textSize="75px" />
 
-        <TextView
-            android:id="@+id/lblBirth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
-            android:text="Birthday"
-            android:textColor="#3b79cd"
-            tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="516dp" />
+    <TextView
+        android:id="@+id/lblBirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="1610px"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:text="Birthday"
+        android:textColor="@color/LightGray"
+        android:textSize="60px" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+    <Spinner
+        android:id="@+id/monthSpinner"
+        android:layout_width="600px"
+        android:layout_height="115px"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="1810px"   />
 
-            <Spinner
-                android:id="@+id/monthSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="517dp" />
+    <EditText
+        android:id="@+id/dateInput"
+        android:layout_width="310px"
+        android:layout_height="115px"
+        android:layout_marginLeft="710px"
+        android:layout_marginTop="1810px"
+        android:backgroundTint="@color/LightGray"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:hint="MM"
+        android:gravity="center"
+        android:inputType="number"
+        android:textColor="@color/Black"
+        android:textColorHint="@color/LightGray"
+        android:textSize="75px" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+    <EditText
+        android:id="@+id/yearInput"
+        android:layout_width="310px"
+        android:layout_height="115px"
+        android:layout_marginLeft="1050px"
+        android:layout_marginTop="1810px"
+        android:backgroundTint="@color/LightGray"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:hint="YYYY"
+        android:gravity="center"
+        android:inputType="number"
+        android:textColor="@color/Black"
+        android:textColorHint="@color/LightGray"
+        android:textSize="75px" />/>
 
-                <EditText
-                    android:id="@+id/dateInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:maxLength="2"
-                    android:hint="date"
-                    android:inputType="number"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#999999" />
-
-                <EditText
-                    android:id="@+id/yearInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:maxLength="4"
-                    android:hint="year"
-                    android:inputType="number"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#999999" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/applyBtn"
@@ -253,7 +210,6 @@
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputForm" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
