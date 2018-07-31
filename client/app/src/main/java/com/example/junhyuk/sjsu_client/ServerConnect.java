@@ -1,11 +1,9 @@
 package com.example.junhyuk.sjsu_client;
 
 import android.os.AsyncTask;
-import android.util.JsonReader;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -13,7 +11,6 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 public class ServerConnect extends AsyncTask<String, Integer, String>{
-
     @Override
     protected String doInBackground(String[] urls) {
         String url = urls[0];
@@ -21,6 +18,7 @@ public class ServerConnect extends AsyncTask<String, Integer, String>{
         String inputLine;
 
         try {
+
             URL myUrl = new URL(url);
 
             HttpURLConnection conn = (HttpURLConnection)myUrl.openConnection();
@@ -41,9 +39,7 @@ public class ServerConnect extends AsyncTask<String, Integer, String>{
 
             reader.close();
             isr.close();
-
             result = stringBuilder.toString();
-
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -52,7 +48,6 @@ public class ServerConnect extends AsyncTask<String, Integer, String>{
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return result;
     }
 

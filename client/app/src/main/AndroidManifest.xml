@@ -12,7 +12,6 @@
         android:theme="@style/AppTheme"
         android:largeHeap="true">
 
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,10 +20,16 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".SelectSportsActivity">
+        </activity>
+
+        <activity android:name=".RealMainActivity">
+        </activity>
+
         <activity android:name=".SignUpActivity">
         </activity>
 
-        <activity android:name=".SelectSportsActivity">
+        <activity android:name=".SelectRoomActivity">
         </activity>
 
         <activity android:name=".FriendListActivity">
