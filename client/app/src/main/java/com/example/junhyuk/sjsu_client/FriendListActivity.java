@@ -187,7 +187,7 @@ public class FriendListActivity extends AppCompatActivity {
                     }
 
                     // Add contact
-                    MyLinearLayout tmp = addContact(contactList, friend.getInt("user2"), name, friend.getString("imgUrl"));
+                    MyLinearLayout tmp = addContact(contactList, friend.getInt("fidx"), name, friend.getString("imgUrl"));
                     addCheck(checkList, true, tmp.getView());
                     contacts.add(tmp);
                 }
@@ -201,7 +201,7 @@ public class FriendListActivity extends AppCompatActivity {
     public MyLinearLayout addContact(LinearLayout target, int fidx, String name, String imgUrl) {
         MyLinearLayout innerContact = new MyLinearLayout(this);
         innerContact.setOrientation(LinearLayout.HORIZONTAL);
-        innerContact.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT));
+        innerContact.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         innerContact.setBackground(getDrawable(R.drawable.divider));
         LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) innerContact.getLayoutParams();
         lp.setMargins(0,0,0,0);
