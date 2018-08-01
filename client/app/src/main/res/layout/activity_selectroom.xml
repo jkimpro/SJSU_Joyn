@@ -9,7 +9,6 @@
         android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
         />
 
     <!-- 최상단 레이아웃 총높이 : 2880-->
@@ -275,17 +274,18 @@
             android:layout_width="match_parent"
             android:layout_height="185px"
             android:orientation="horizontal">
+
             <ImageButton
-                android:layout_width="927px"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="257px"/>
-
+                android:id="@+id/joinBt"
+                android:scaleType="fitXY"
+                android:layout_width="900px"
+                android:layout_height="170px"
+                android:padding="20px"
+                android:layout_marginLeft="257px"
+                android:src="@drawable/join"
+                />
         </LinearLayout>
-
-
-
     </LinearLayout>
-
     <!--하단 레이아웃-->
     <LinearLayout
         android:layout_width="1440px"
@@ -308,7 +308,7 @@
             android:id="@+id/addCircle"
             android:layout_width="140px"
             android:layout_height="140px"
-            android:layout_marginLeft="380px"
+            android:layout_marginLeft="360px"
             android:layout_marginTop="23px"
             android:background="@drawable/button_bg_round"
             android:padding="15px"
