@@ -43,7 +43,7 @@
     <EditText
         android:id="@+id/fnameInput"
         android:layout_width="625px"
-        android:layout_height="130px"
+        android:layout_height="140px"
         android:layout_marginLeft="80px"
         android:layout_marginTop="610px"
         android:backgroundTint="@color/LightGray"
@@ -57,7 +57,7 @@
     <EditText
         android:id="@+id/lnameInput"
         android:layout_width="625px"
-        android:layout_height="130px"
+        android:layout_height="140px"
         android:layout_marginLeft="735px"
         android:layout_marginTop="610px"
         android:backgroundTint="@color/LightGray"
@@ -82,7 +82,7 @@
     <EditText
         android:id="@+id/aplyEmailInput"
         android:layout_width="1280px"
-        android:layout_height="130px"
+        android:layout_height="140px"
         android:layout_marginLeft="80px"
         android:layout_marginTop="915px"
         android:backgroundTint="@color/LightGray"
@@ -93,7 +93,7 @@
 
     <TextView
         android:layout_width="260px"
-        android:layout_height="130px"
+        android:layout_height="140px"
         android:layout_marginLeft="1100px"
         android:layout_marginTop="915px"
         android:fontFamily="@font/notosanscjkkr_medium"
@@ -115,7 +115,7 @@
     <EditText
         android:id="@+id/aplyPwInput"
         android:layout_width="1280px"
-        android:layout_height="130px"
+        android:layout_height="140px"
         android:layout_marginLeft="80px"
         android:layout_marginTop="1220px"
         android:backgroundTint="@color/LightGray"
@@ -138,7 +138,7 @@
     <EditText
         android:id="@+id/pwChkInput"
         android:layout_width="1280px"
-        android:layout_height="130px"
+        android:layout_height="140px"
         android:layout_marginLeft="80px"
         android:layout_marginTop="1525px"
         android:backgroundTint="@color/LightGray"
@@ -161,14 +161,14 @@
     <Spinner
         android:id="@+id/monthSpinner"
         android:layout_width="600px"
-        android:layout_height="130px"
+        android:layout_height="140px"
         android:layout_marginLeft="80px"
         android:layout_marginTop="1810px"   />
 
     <EditText
         android:id="@+id/dateInput"
         android:layout_width="310px"
-        android:layout_height="130px"
+        android:layout_height="140px"
         android:layout_marginLeft="710px"
         android:layout_marginTop="1810px"
         android:backgroundTint="@color/LightGray"
@@ -183,7 +183,7 @@
     <EditText
         android:id="@+id/yearInput"
         android:layout_width="310px"
-        android:layout_height="130px"
+        android:layout_height="140px"
         android:layout_marginLeft="1050px"
         android:layout_marginTop="1810px"
         android:backgroundTint="@color/LightGray"

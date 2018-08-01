@@ -29,12 +29,8 @@
         <activity android:name=".SignUpActivity">
         </activity>
 
-<<<<<<< HEAD
-        <activity android:name=".SelectSportsActivity"/>
-=======
         <activity android:name=".SelectRoomActivity">
         </activity>
->>>>>>> 71802bd775ce06f212e7e9e36a13f372d98fb6fc
 
         <activity android:name=".FriendListActivity"/>
 
