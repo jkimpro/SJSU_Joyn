@@ -3,6 +3,7 @@ package com.example.junhyuk.sjsu_client;
 import org.json.JSONObject;
 
 public class UserProfileVO {
+
     private int userID;
     private JSONObject sport;
     private int[] favorite;
