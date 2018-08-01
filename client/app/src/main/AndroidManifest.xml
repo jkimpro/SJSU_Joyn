@@ -32,10 +32,13 @@
         <activity android:name=".SelectRoomActivity">
         </activity>
 
-        <activity android:name=".FriendListActivity"/>
+        <activity android:name=".FriendViewActivity">
+        </activity>
+
+        <activity android:name=".HostGameInitActivity">
+        </activity>
 
         <activity android:name=".CalendarViewActivity"/>
-
         <activity android:name=".PopUpActivity"/>
     </application>
 

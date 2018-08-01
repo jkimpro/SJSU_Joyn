@@ -3,12 +3,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:background="@drawable/main_page">
-
+    >
     <ImageView
         android:id="@+id/back"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
@@ -154,7 +152,7 @@
                     android:layout_marginLeft="162px"
                     android:orientation="vertical">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/friendImage1"
                         android:layout_width="200px"
                         android:layout_height="200px"
@@ -182,7 +180,7 @@
                     android:layout_marginLeft="61px"
                     android:orientation="vertical">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/friendImage2"
                         android:layout_width="200px"
                         android:layout_height="200px"
@@ -209,7 +207,7 @@
                     android:layout_marginLeft="61px"
                     android:orientation="vertical">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/friendImage3"
                         android:layout_width="200px"
                         android:layout_height="200px"
@@ -236,7 +234,7 @@
                     android:layout_marginLeft="61px"
                     android:orientation="vertical">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/friendImageElse1"
                         android:layout_width="200px"
                         android:layout_height="200px"
@@ -245,7 +243,7 @@
                         android:background="@drawable/button_bg_round"
                         android:padding="15px" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/friendImageElse2"
                         android:layout_width="200px"
                         android:layout_height="200px"
