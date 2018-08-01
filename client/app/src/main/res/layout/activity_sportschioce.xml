@@ -8,7 +8,7 @@
         android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:background="@drawable/select_sports4"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,13 +20,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp">
+        android:layout_marginTop="240px">
 
         <Button
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="50px"
+            android:layout_height="50px"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
             android:background="@drawable/ic_keyboard_arrow_up_black_24dp"/>
 
         <LinearLayout
@@ -34,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="12dp">
 
             <LinearLayout
@@ -48,19 +48,19 @@
 
                     <Button
                         android:id="@+id/tennisBt"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"/>
+                        android:layout_width="410px"
+                        android:layout_height="410px"
+                        android:background="#00000000"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Tennis"/>
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_gravity="center" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="13dp"
-                    android:layout_height="100dp">
+                    android:layout_width="50px"
+                    android:layout_height="10px">
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -69,19 +69,19 @@
 
                     <Button
                         android:id="@+id/basketballBt"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"/>
+                        android:layout_width="410px"
+                        android:layout_height="410px"
+                        android:background="#00000000"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="basketball" />
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_gravity="center" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="13dp"
-                    android:layout_height="100dp">
+                    android:layout_width="50px"
+                    android:layout_height="10px">
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -90,14 +90,14 @@
 
                     <Button
                         android:id="@+id/soccerBt"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"/>
+                        android:layout_width="410px"
+                        android:layout_height="410px"
+                        android:background="#00000000"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="soccer" />
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_gravity="center" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -113,19 +113,19 @@
 
                     <Button
                         android:id="@+id/workoutBt"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"/>
+                        android:layout_width="410px"
+                        android:layout_height="410px"
+                        android:background="#00000000"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="work out" />
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_gravity="center" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="13dp"
-                    android:layout_height="100dp">
+                    android:layout_width="50px"
+                    android:layout_height="10px">
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -134,19 +134,19 @@
 
                     <Button
                         android:id="@+id/badmintonBt"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"/>
+                        android:layout_width="410px"
+                        android:layout_height="410px"
+                        android:background="#00000000"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="badminton" />
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_gravity="center" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="13dp"
-                    android:layout_height="100dp">
+                    android:layout_width="50px"
+                    android:layout_height="10px">
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -155,14 +155,14 @@
 
                     <Button
                         android:id="@+id/joggingBt"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"/>
+                        android:layout_width="410px"
+                        android:layout_height="410px"
+                        android:background="#00000000"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="jogging" />
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_gravity="center" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -178,19 +178,19 @@
 
                     <Button
                         android:id="@+id/yogaBt"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"/>
+                        android:layout_width="410px"
+                        android:layout_height="410px"
+                        android:background="#00000000"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="yoga" />
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_gravity="center" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="13dp"
-                    android:layout_height="100dp">
+                    android:layout_width="50px"
+                    android:layout_height="10px">
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -199,18 +199,19 @@
 
                     <Button
                         android:id="@+id/cyclingBt"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"/>
+                        android:layout_width="410px"
+                        android:layout_height="410px"
+                        android:background="#00000000"/>
+
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="cycling" />
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_gravity="center" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="13dp"
-                    android:layout_height="100dp">
+                    android:layout_width="50px"
+                    android:layout_height="10px">
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -219,14 +220,14 @@
 
                     <Button
                         android:id="@+id/baseballBt"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"/>
+                        android:layout_width="410px"
+                        android:layout_height="410px"
+                        android:background="#00000000"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="baseball" />
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_gravity="center" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -241,20 +242,19 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/bowlingBt"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"/>
+                        android:layout_width="410px"
+                        android:layout_height="410px"
+                        android:background="#00000000"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="bowling" />
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_gravity="center" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="13dp"
-                    android:layout_height="100dp">
+                    android:layout_width="50px"
+                    android:layout_height="10px">
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -263,19 +263,19 @@
 
                     <Button
                         android:id="@+id/billiardsBt"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"/>
+                        android:layout_width="410px"
+                        android:layout_height="410px"
+                        android:background="#00000000"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="billiards" />
+                        android:layout_gravity="center" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="13dp"
-                    android:layout_height="100dp">
+                    android:layout_width="50px"
+                    android:layout_height="10px">
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -284,33 +284,28 @@
 
                     <Button
                         android:id="@+id/surfingBt"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"/>
+                        android:layout_width="410px"
+                        android:layout_height="410px"
+                        android:background="#00000000"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="surfing" />
+                        android:layout_gravity="center" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
         <Button
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="50px"
+            android:layout_height="50px"
             android:layout_gravity="center"
             android:background="@drawable/ic_keyboard_arrow_down_black_24dp"/>
 
         <Button
             android:id="@+id/okBt"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginLeft="315dp"
-            android:text="OK"
-            android:textSize="15dp"
-            android:textColor="@color/Blue"
+            android:layout_width="match_parent"
+            android:layout_height="400px"
             android:background="#00000000"/>
     </LinearLayout>
 

@@ -49,7 +49,6 @@ public class SignUpActivity extends AppCompatActivity {
         findViewById(R.id.dateInput).setNextFocusDownId(R.id.yearInput);
 
         hideBar();
-        putBackground();
         getToolbar();
 
         monthSpinner = findViewById(R.id.monthSpinner);
@@ -174,14 +173,6 @@ public class SignUpActivity extends AppCompatActivity {
                         }
                     });
         }
-    }
-
-    public void putBackground() {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 4;
-        Bitmap bitmapImage = BitmapFactory.decodeResource(getResources(), R.drawable.backgroundimage2, options);
-        ImageView imageView = (ImageView) findViewById(R.id.back);
-        imageView.setImageBitmap(bitmapImage);
     }
 
     public void getToolbar(){

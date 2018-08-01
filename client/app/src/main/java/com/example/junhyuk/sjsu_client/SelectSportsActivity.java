@@ -34,13 +34,6 @@ public class SelectSportsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sportschioce);
 
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 4;
-        Bitmap bitmapImage = BitmapFactory.decodeResource(getResources(), R.drawable.select_sports4, options);
-        ImageView imageView = (ImageView)findViewById(R.id.back);
-        imageView.setImageBitmap(bitmapImage);
-
-
         isSelected = new boolean[12];
         Log.e("SelectSportsActivity","Launch");
         for(int i =0; i<12; i++)

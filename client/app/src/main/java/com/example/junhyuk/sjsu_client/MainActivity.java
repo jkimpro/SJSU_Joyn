@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         pw = findViewById(R.id.pwInput);
 
         hideBar();
-        putBackground();
 
         btnLogin = (Button) findViewById(R.id.loginBtn);
         btnLogin.setOnClickListener(new Button.OnClickListener() {
@@ -175,14 +174,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
         }
-    }
-
-    public void putBackground(){
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 4;
-        Bitmap bitmapImage = BitmapFactory.decodeResource(getResources(), R.drawable.backgroundimage2, options);
-        ImageView imageView = (ImageView) findViewById(R.id.back);
-        imageView.setImageBitmap(bitmapImage);
     }
 
 }
