@@ -6,17 +6,25 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class SelectRoomActivity extends AppCompatActivity {
 
 
     private int currentApiVersion;
+    private boolean isJoined;
+    private ImageButton imageButton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        isJoined = false;
+        imageButton = findViewById(R.id.joinBt);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selectroom);
 
@@ -32,6 +40,38 @@ public class SelectRoomActivity extends AppCompatActivity {
         findViewById(R.id.friendImage3).setOnClickListener(friendButtonListener);
         findViewById(R.id.friendImageElse1).setOnClickListener(friendButtonListener);
         findViewById(R.id.friendImageElse2).setOnClickListener(friendButtonListener);
+
+
+        //join -> joined , joined -> join 바뀌는것.
+        findViewById(R.id.joinBt).setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v)
+            {
+                if(isJoined)
+                {
+                    isJoined = false;
+                    imageButton.setImageResource(R.drawable.join);
+                    Log.e("SelctRoomActivity","join으로 이미지 바뀌어야함");
+                }
+                else
+                {
+                    isJoined = true;
+                    imageButton.setImageResource(R.drawable.joined);
+                    Log.e("SelctRoomActivity","joined로 이미지 바뀌어야함");
+                }
+            }
+        });
+
+        //화면전환
+        findViewById(R.id.joinCloseBt).setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent = new Intent(SelectRoomActivity.this, HostGameInitActivity.class);
+                Log.e("SelctRoomActivity","HostGame 으로 넘거야됨");
+
+                startActivity(intent);
+                Log.e("SelctRoomActivity","HostGame 으로 넘어감");
+
+            }
+        });
 
 
         currentApiVersion = android.os.Build.VERSION.SDK_INT;
@@ -82,14 +122,8 @@ public class SelectRoomActivity extends AppCompatActivity {
         }
     }
 
-    Button.OnClickListener joinCloseButton =
-            new Button.OnClickListener(){
-                public void onClick(View v) {
-                    Intent intent = new Intent(SelectRoomActivity.this, RealMainActivity.class);
-                    startActivity(intent);
-                }
-            };
 
+    //친구창 열리는 Listener
     Button.OnClickListener friendButtonListener =
             new Button.OnClickListener(){
                 public void onClick(View v) {

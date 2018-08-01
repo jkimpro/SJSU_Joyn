@@ -35,6 +35,9 @@
         <activity android:name=".FriendViewActivity">
         </activity>
 
+        <activity android:name=".HostGameInitActivity">
+        </activity>
+
 
         <meta-data
             android:name="preloaded_fonts"

@@ -54,7 +54,6 @@ public class RealMainActivity extends AppCompatActivity{
         {
 
             getWindow().getDecorView().setSystemUiVisibility(flags);
-
             // Code below is to handle presses of Volume up or Volume down.
             // Without this, after pressing volume buttons, the navigation bar will
             // show up and won't hide
