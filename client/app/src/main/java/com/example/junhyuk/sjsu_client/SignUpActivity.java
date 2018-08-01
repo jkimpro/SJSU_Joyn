@@ -1,15 +1,23 @@
 package com.example.junhyuk.sjsu_client;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Patterns;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,12 +27,14 @@ import org.json.JSONObject;
 
 import java.util.concurrent.ExecutionException;
 
-public class SignUpActivity extends AppCompatActivity{
+public class SignUpActivity extends AppCompatActivity {
 
     private String url = "http://seslab.sejong.ac.kr:7777/signUp.php";
     private EditText fname, lname, email, pw, pwChk, date, year;
     private Spinner monthSpinner;
     private boolean flag;
+    private int currentApiVersion;
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +48,10 @@ public class SignUpActivity extends AppCompatActivity{
         findViewById(R.id.fnameInput).setNextFocusDownId(R.id.lnameInput);
         findViewById(R.id.dateInput).setNextFocusDownId(R.id.yearInput);
 
+        hideBar();
+        putBackground();
+        getToolbar();
+
         monthSpinner = findViewById(R.id.monthSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.month, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -46,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity{
         monthSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.WHITE);
+                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
             }
 
             @Override
@@ -68,7 +82,6 @@ public class SignUpActivity extends AppCompatActivity{
                         pwChk = findViewById(R.id.pwChkInput);
                         year = findViewById(R.id.yearInput);
                         date = findViewById(R.id.dateInput);
-                        monthSpinner = findViewById(R.id.monthSpinner);
 
                         /* Check for input data */
                         if (!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()) {
@@ -130,9 +143,59 @@ public class SignUpActivity extends AppCompatActivity{
                         }
                     }
                 }
-                );
+        );
     }
 
+    public void hideBar() {
+        //상하단바 없애기
+        final int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+
+        currentApiVersion = android.os.Build.VERSION.SDK_INT;
+        // This work only for android 4.4+
+        if (currentApiVersion >= Build.VERSION_CODES.KITKAT) {
+
+            getWindow().getDecorView().setSystemUiVisibility(flags);
+
+            // Code below is to handle presses of Volume up or Volume down.
+            // Without this, after pressing volume buttons, the navigation bar will
+            // show up and won't hideㅁ
+            final View decorView = getWindow().getDecorView();
+            decorView
+                    .setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+
+                        @Override
+                        public void onSystemUiVisibilityChange(int visibility) {
+                            if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                                decorView.setSystemUiVisibility(flags);
+                            }
+                        }
+                    });
+        }
+    }
+
+    public void putBackground() {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inSampleSize = 4;
+        Bitmap bitmapImage = BitmapFactory.decodeResource(getResources(), R.drawable.backgroundimage2, options);
+        ImageView imageView = (ImageView) findViewById(R.id.back);
+        imageView.setImageBitmap(bitmapImage);
+    }
+
+    public void getToolbar(){
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
+        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowCustomEnabled(true); //커스터마이징 하기 위해 필요
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼, 디폴트로 true만 해도 백버튼이 생김
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp); //뒤로가기 버튼을 본인이 만든 아이콘으로 하기 위해 필요
+        actionBar.setTitle(null);
+    }
     @Override
     public void finish() {
         Intent intent = new Intent();
@@ -148,4 +211,27 @@ public class SignUpActivity extends AppCompatActivity{
         setResult(AppCompatActivity.RESULT_OK, intent);
         super.finish();
     }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (currentApiVersion >= Build.VERSION_CODES.KITKAT && hasFocus) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
