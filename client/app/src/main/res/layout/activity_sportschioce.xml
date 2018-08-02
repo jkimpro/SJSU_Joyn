@@ -242,6 +242,7 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/bowlingBt"
                         android:layout_width="410px"
                         android:layout_height="410px"
                         android:background="#00000000"/>
