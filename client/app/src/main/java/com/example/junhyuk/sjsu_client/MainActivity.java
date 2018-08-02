@@ -23,7 +23,6 @@ import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -104,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
         /* Sign Up Button Click Event : Page Redirect*/
         findViewById(R.id.joinBtn).setOnClickListener(
                 new Button.OnClickListener() {

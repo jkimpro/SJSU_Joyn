@@ -46,18 +46,9 @@ public class SelectRoomActivity extends AppCompatActivity {
         findViewById(R.id.joinBt).setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v)
             {
-                if(isJoined)
-                {
-                    isJoined = false;
-                    imageButton.setImageResource(R.drawable.join);
-                    Log.e("SelctRoomActivity","join으로 이미지 바뀌어야함");
-                }
-                else
-                {
-                    isJoined = true;
-                    imageButton.setImageResource(R.drawable.joined);
-                    Log.e("SelctRoomActivity","joined로 이미지 바뀌어야함");
-                }
+                Intent intent = new Intent(SelectRoomActivity.this, FriendListActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -65,11 +56,8 @@ public class SelectRoomActivity extends AppCompatActivity {
         findViewById(R.id.joinCloseBt).setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(SelectRoomActivity.this, HostGameInitActivity.class);
-                Log.e("SelctRoomActivity","HostGame 으로 넘거야됨");
-
                 startActivity(intent);
-                Log.e("SelctRoomActivity","HostGame 으로 넘어감");
-
+                finish();
             }
         });
 

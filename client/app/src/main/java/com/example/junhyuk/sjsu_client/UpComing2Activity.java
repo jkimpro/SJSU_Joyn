@@ -10,38 +10,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class RealMainActivity extends AppCompatActivity{
-
+public class UpComing2Activity extends AppCompatActivity{
 
     private int currentApiVersion;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_real_main);
+        setContentView(R.layout.activity_upcoming2);
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 4;
 
-        Bitmap bitmapImage = BitmapFactory.decodeResource(getResources(), R.drawable.main_page, options);
+        //바꿔야됨.
+        Bitmap bitmapImage = BitmapFactory.decodeResource(getResources(), R.drawable.upcoming2, options);
         ImageView imageView = (ImageView)findViewById(R.id.back);
         imageView.setImageBitmap(bitmapImage);
 
-        findViewById(R.id.joinOpenBt).setOnClickListener(new Button.OnClickListener(){
+        findViewById(R.id.nextBt).setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
-                Intent intent = new Intent(RealMainActivity.this, SelectRoomActivity.class);
+                Intent intent = new Intent(UpComing2Activity.this, AlarmPageActivity.class);
                 startActivity(intent);
                 finish();
 
             }
         });
-
-        findViewById(R.id.friendImage1).setOnClickListener(friendButtonListener);
-        findViewById(R.id.friendImage2).setOnClickListener(friendButtonListener);
-        findViewById(R.id.friendImage3).setOnClickListener(friendButtonListener);
-        findViewById(R.id.friendImageElse1).setOnClickListener(friendButtonListener);
-        findViewById(R.id.friendImageElse2).setOnClickListener(friendButtonListener);
 
         currentApiVersion = android.os.Build.VERSION.SDK_INT;
 
@@ -54,7 +46,6 @@ public class RealMainActivity extends AppCompatActivity{
         // This work only for android 4.4+
         if(currentApiVersion >= Build.VERSION_CODES.KITKAT)
         {
-
             getWindow().getDecorView().setSystemUiVisibility(flags);
             // Code below is to handle presses of Volume up or Volume down.
             // Without this, after pressing volume buttons, the navigation bar will
@@ -75,29 +66,6 @@ public class RealMainActivity extends AppCompatActivity{
                     });
         }
 
+
     }
-
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus)
-    {
-        super.onWindowFocusChanged(hasFocus);
-        if(currentApiVersion >= Build.VERSION_CODES.KITKAT && hasFocus)
-        {
-            getWindow().getDecorView().setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-        }
-    }
-
-    Button.OnClickListener friendButtonListener =
-            new Button.OnClickListener(){
-                public void onClick(View v) {
-                    Intent intent = new Intent(RealMainActivity.this, FriendViewActivity.class);
-                    startActivity(intent);
-                }
-            };
-
 }

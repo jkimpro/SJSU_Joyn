@@ -38,7 +38,36 @@
         <activity android:name=".HostGameInitActivity">
         </activity>
 
-        <activity android:name=".CalendarViewActivity"/>
+        <activity android:name=".HostGame1Activity">
+        </activity>
+
+        <activity android:name=".HostGame2Activity">
+        </activity>
+
+        <activity android:name=".HostGame3Activity">
+        </activity>
+
+        <activity android:name=".HostGameReady4Activity">
+        </activity>
+
+        <activity android:name=".UpComing1Activity">
+        </activity>
+
+        <activity android:name=".UpComing2Activity">
+        </activity>
+
+        <activity android:name=".AlarmPageActivity">
+        </activity>
+
+        <activity android:name=".FitnessPageActivity">
+        </activity>
+
+        <activity android:name=".JudgePageActivity">
+        </activity>
+
+        <activity android:name=".FriendListActivity">
+        </activity>
+
         <activity android:name=".PopUpActivity"/>
     </application>
 

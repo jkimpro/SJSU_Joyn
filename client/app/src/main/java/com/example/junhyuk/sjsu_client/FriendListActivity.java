@@ -3,6 +3,7 @@ package com.example.junhyuk.sjsu_client;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -15,6 +16,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -31,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class FriendListActivity extends AppCompatActivity {
+
     private String url;
     private JSONArray friendList;
     private String alpha;
@@ -44,6 +47,17 @@ public class FriendListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friend_list);
+
+        ImageButton nextBtn = findViewById(R.id.addBtn);
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FriendListActivity.this, HostGameInitActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
         // set values
         selectFlag = false;

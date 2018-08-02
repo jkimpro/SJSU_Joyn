@@ -2,6 +2,7 @@ package com.example.junhyuk.sjsu_client;
 
 import android.animation.Animator;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.GradientDrawable;
@@ -18,10 +19,16 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
+/*
 class AppDrawer {
     private int waitMS = 2000;  // The time after which the drawer is closing automatically
     private Handler handlCountDown;
     private View bottomDrawer;
+
+    private Button toNextPage1;
+    private Button toNextPage2;
+
     private Activity activity;
     private static final int DRAWER_UP = 1;
     private static final int DRAWER_DOWN = 0;
@@ -44,10 +51,17 @@ class AppDrawer {
     }
 
     // ********************************************************************************************** Initialize
-    private void initialize() {
+    public void initialize() {
         // Bottom Drawer
         bottomDrawer =  activity.findViewById(R.id.bottom_drawer);
         drawerTxt = (TextView) bottomDrawer.findViewById(R.id.drawer_txt);
+
+        bottomDrawer.findViewById(R.id.drawer_txt).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeDrawer();
+            }
+        });
 
         // Handler for timing for automatically closing the drawer
         handlCountDown = new Handler();
@@ -226,27 +240,13 @@ class AppDrawer {
         }
     };
 }
+*/
+
+
 
 public class HostGameInitActivity extends AppCompatActivity{
 
-    private AppDrawer appDrawer;
-
-    private static final int BUTTON_ONE = 1;
-    private static final int BUTTON_TWO = 2;
-    private static final int BUTTON_THREE = 3;
-
     private int currentApiVersion;
-
-    //********************************************************************************************** Initialize
-    private void initialize() {
-        // ----------------------------------------------------------------------------------------- Button ONE
-        final Button buttonOne = (Button)findViewById(R.id.my_status);
-        assert buttonOne != null;
-        buttonOne.setOnClickListener(new buttonsListener());
-        buttonOne.setTag(BUTTON_ONE);
-        appDrawer = new AppDrawer(this);
-
-    }
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -254,23 +254,24 @@ public class HostGameInitActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_host_game_init);
 
-        Log.e("HostGame", "End ");
-
-        /*
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 4;
-        Bitmap bitmapImage = BitmapFactory.decodeResource(getResources(), R.drawable.main_page, options);
-        ImageView imageView = (ImageView)findViewById(R.id.back);
+
+        //바꿔야됨.
+        Bitmap bitmapImage = BitmapFactory.decodeResource(getResources(), R.drawable.hostinit, options);
+        ImageView imageView = (ImageView)findViewById(R.id.back1);
         imageView.setImageBitmap(bitmapImage);
-        */
-        //이벤트 발생하는 것.
-        initialize();
 
-        //Hiding the ActionBar
-        //assert getSupportActionBar() != null;
-        //SupportActionBar().hide();
+        findViewById(R.id.nextBt).setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent = new Intent(HostGameInitActivity.this, HostGame1Activity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
         currentApiVersion = android.os.Build.VERSION.SDK_INT;
-
         final int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -280,14 +281,12 @@ public class HostGameInitActivity extends AppCompatActivity{
         // This work only for android 4.4+
         if(currentApiVersion >= Build.VERSION_CODES.KITKAT)
         {
-
             getWindow().getDecorView().setSystemUiVisibility(flags);
             // Code below is to handle presses of Volume up or Volume down.
             // Without this, after pressing volume buttons, the navigation bar will
             // show up and won't hide
             final View decorView = getWindow().getDecorView();
-            decorView
-                    .setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener()
+            decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener()
                     {
 
                         @Override
@@ -300,8 +299,11 @@ public class HostGameInitActivity extends AppCompatActivity{
                         }
                     });
         }
+        Log.e("HostGame", "End");
 
     }
+
+
     @Override
     public void onWindowFocusChanged(boolean hasFocus)
     {
@@ -314,17 +316,6 @@ public class HostGameInitActivity extends AppCompatActivity{
                             | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-        }
-    }
-
-
-    // --------------------------------------------------------------------------------------------- Buttons Listener
-    public class buttonsListener implements View.OnClickListener{
-        @Override
-        public void onClick(View v) {
-
-            int buttonTag = (int)v.getTag();
-            appDrawer.switchDrawer(buttonTag);
         }
     }
 
