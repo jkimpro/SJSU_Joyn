@@ -68,7 +68,7 @@
                         android:id="@+id/basketballBt"
                         android:layout_width="410px"
                         android:layout_height="410px"
-                        android:background="#FFFFFF"/>
+                        android:background="@drawable/basketball"/>
 
                     <TextView
                         android:layout_width="100px"

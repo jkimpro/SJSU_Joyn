@@ -50,7 +50,7 @@ public class SelectSportsActivity extends AppCompatActivity {
         Log.e("SelectSportsActivity","Image Go");
 
         findViewById(R.id.tennisBt).setOnClickListener(optionSelectListener);
-        findViewById(R.id.baseballBt).setOnClickListener(optionSelectListener);
+        findViewById(R.id.basketballBt).setOnClickListener(optionSelectListener);
         findViewById(R.id.soccerBt).setOnClickListener(optionSelectListener);
         findViewById(R.id.workoutBt).setOnClickListener(optionSelectListener);
         findViewById(R.id.badmintonBt).setOnClickListener(optionSelectListener);
@@ -86,9 +86,11 @@ public class SelectSportsActivity extends AppCompatActivity {
                             if (isSelected[1]) {
                                 isSelected[1] = false;
                                 // 버튼 이미지 변환 부분 삽입 (원래 대로)
+                                findViewById(R.id.basketballBt).setBackgroundResource(R.drawable.basketball);
                             } else {
                                 isSelected[1] = true;
                                 // 버튼 이미지 변환 부분 삽입 (색상 변환)
+                                findViewById(R.id.basketballBt).setBackgroundColor(getApplicationContext().getResources().getColor(R.color.aa));
                             }
                             break;
                         }
