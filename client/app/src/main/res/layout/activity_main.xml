@@ -32,12 +32,12 @@
         android:inputType="textEmailAddress"
         android:textColor="@color/LightBlue"
         android:textColorHint="@color/LightBlue"
-        android:textSize="60px" />
+        android:textSize="50px" />
 
     <EditText
         android:id="@+id/pwInput"
         android:layout_width="900px"
-        android:layout_height="wrap_content"
+        android:layout_height="180px"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="1380px"
         android:backgroundTint="@color/LightBlue"
@@ -47,7 +47,7 @@
         android:inputType="textPassword"
         android:textColor="@color/LightBlue"
         android:textColorHint="@color/LightBlue"
-        android:textSize="70px" />
+        android:textSize="50px" />
 
     <Button
         android:id="@+id/loginBtn"
