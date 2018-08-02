@@ -7,8 +7,7 @@
     <ImageView
         android:id="@+id/back"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/main_page" />
+        android:layout_height="match_parent"/>
 
     <!-- 최상단 레이아웃 총높이 : 2880-->
     <LinearLayout
