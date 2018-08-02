@@ -14,17 +14,10 @@
     <LinearLayout
         android:layout_width="1440px"
         android:layout_height="225px">
-        <TextView
-            android:layout_width="990px"
-            android:layout_height="225px"
-            android:layout_marginLeft="225px"
-            android:text="JOYN"
-            android:textSize="120px"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            />
+
         <ImageButton
             android:id="@+id/my_status"
+            android:layout_marginLeft="1215px"
             android:layout_width="225px"
             android:layout_height="225px"
             />
@@ -42,25 +35,16 @@
 
         <LinearLayout
             android:layout_width="1440px"
-            android:layout_height="252px"
+            android:layout_height="402px"
             android:layout_marginTop="95px">
-
-            <TextView
-                android:layout_width="480px"
-                android:layout_height="220px"
-                android:layout_marginLeft="480px"
-                android:text="OPEN GAME"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textSize="50px" />
 
 
             <ImageButton
                 android:id="@+id/joinCloseBt"
                 android:layout_width="200px"
                 android:layout_height="200px"
-                android:layout_marginLeft="162px"
-                android:layout_marginTop="50px"
+                android:layout_marginLeft="1120px"
+                android:layout_marginTop="150px"
                 android:background="@drawable/button_bg_round"
                 android:padding="15px" />
 
@@ -68,13 +52,13 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="500px"
-            >
+            android:layout_height="500px">
+
             <ImageButton
                 android:layout_width="100px"
                 android:layout_height="100px"
                 android:layout_marginLeft="75px"
-                android:layout_marginTop="235px"
+                android:layout_marginTop="175px"
                 android:background="@drawable/button_bg_round"
                 android:padding="15px" />
 
@@ -82,7 +66,7 @@
                 android:layout_width="100px"
                 android:layout_height="100px"
                 android:layout_marginLeft="1088px"
-                android:layout_marginTop="235px"
+                android:layout_marginTop="175px"
                 android:background="@drawable/button_bg_round"
                 android:padding="15px"
                 />
@@ -92,37 +76,6 @@
             android:layout_width="match_parent"
             android:layout_height="378px"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/sportsOption"
-                android:layout_width="match_parent"
-                android:layout_height="100px"
-                android:text="Basket ball"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textSize="81px"
-                />
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="900px"
-                android:layout_height="100px"
-                android:layout_marginLeft="270px"
-                android:layout_marginTop="21px"
-                android:text="1:00pm - 4:00pm"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textSize="81px" />
-
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="900px"
-                android:layout_height="100px"
-                android:layout_marginLeft="270px"
-                android:layout_marginTop="2px"
-                android:text="14 Oct"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textSize="80px" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -134,17 +87,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200px">
-
-                <TextView
-                    android:id="@+id/playerNumber"
-                    android:layout_width="900px"
-                    android:layout_height="100px"
-                    android:layout_marginLeft="267px"
-                    android:layout_marginTop="40px"
-                    android:text="Player 6/10"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                    android:textSize="80px" />
             </LinearLayout>
 
             <LinearLayout
@@ -166,17 +108,6 @@
                         android:layout_marginTop="10px"
                         android:background="@drawable/button_bg_round"
                         android:padding="15px" />
-
-                    <TextView
-                        android:id="@+id/friendName1"
-                        android:layout_width="200px"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="15px"
-                        android:text="David"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                        android:textSize="8pt" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -193,16 +124,6 @@
                         android:layout_marginTop="10px"
                         android:background="@drawable/button_bg_round"
                         android:padding="15px" />
-
-                    <TextView
-                        android:id="@+id/friendName2"
-                        android:layout_width="200px"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="15px"
-                        android:text="Tom"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                        android:textSize="8pt" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -219,16 +140,6 @@
                         android:layout_marginTop="10px"
                         android:background="@drawable/button_bg_round"
                         android:padding="15px" />
-
-                    <TextView
-                        android:id="@+id/friendName3"
-                        android:layout_width="200px"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="15px"
-                        android:text="Sasha"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                        android:textSize="8pt" />
                 </LinearLayout>
 
                 <RelativeLayout
@@ -253,74 +164,44 @@
                         android:layout_marginTop="10px"
                         android:background="@drawable/button_bg_round"
                         android:padding="15px" />
-
-                    <TextView
-                        android:id="@+id/friendNameElse"
-                        android:layout_width="200px"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="25px"
-                        android:layout_marginTop="202px"
-                        android:text="+2"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                        android:textSize="8pt" />
                 </RelativeLayout>
 
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="185px"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/joinBt"
-                android:scaleType="fitXY"
-                android:layout_width="900px"
-                android:layout_height="170px"
-                android:padding="20px"
-                android:layout_marginLeft="257px"
-                android:src="@drawable/join"
-                />
-        </LinearLayout>
     </LinearLayout>
-    <!--하단 레이아웃-->
-    <LinearLayout
-        android:layout_width="1440px"
-        android:layout_height="455px"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="2425px">
 
-        <ImageButton
-            android:id="@+id/home"
-            android:layout_width="140px"
-            android:layout_height="140px"
-            android:layout_marginLeft="160px"
-            android:layout_marginTop="23px"
-            android:background="@drawable/button_bg_round"
-            android:padding="15px"
-            />
+    <ImageButton
+        android:id="@+id/joinBt"
+        android:layout_width="900px"
+        android:layout_height="170px"
+        android:layout_marginLeft="270px"
+        android:layout_marginTop="2270px"
+        android:background="#00000000"/>
+
+    <!--하단 레이아웃-->
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="140px"
+        android:layout_height="140px"
+        android:layout_marginLeft="140px"
+        android:layout_marginTop="2630px"
+        android:background="@drawable/button_bg_round" />
 
         <ImageButton
             android:id="@+id/addCircle"
             android:layout_width="140px"
             android:layout_height="140px"
-            android:layout_marginLeft="360px"
-            android:layout_marginTop="23px"
-            android:background="@drawable/button_bg_round"
-            android:padding="15px"
-            />
+            android:layout_marginLeft="655px"
+            android:layout_marginTop="2630px"
+            android:background="@drawable/button_bg_round" />
+
         <ImageButton
             android:id="@+id/assignment"
             android:layout_width="140px"
             android:layout_height="140px"
-            android:layout_marginLeft="350px"
-            android:layout_marginTop="23px"
-            android:background="@drawable/button_bg_round"
-            android:padding="15px"
-            />
-    </LinearLayout>
+            android:layout_marginLeft="1160px"
+            android:layout_marginTop="2630px"
+            android:background="@drawable/button_bg_round" />
 
 </RelativeLayout>
 

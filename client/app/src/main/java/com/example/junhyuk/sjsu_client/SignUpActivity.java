@@ -49,7 +49,6 @@ public class SignUpActivity extends AppCompatActivity {
         findViewById(R.id.dateInput).setNextFocusDownId(R.id.yearInput);
 
         hideBar();
-        putBackground();
         getToolbar();
 
         monthSpinner = findViewById(R.id.monthSpinner);
@@ -176,14 +175,6 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
-    public void putBackground() {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 4;
-        Bitmap bitmapImage = BitmapFactory.decodeResource(getResources(), R.drawable.backgroundimage2, options);
-        ImageView imageView = (ImageView) findViewById(R.id.back);
-        imageView.setImageBitmap(bitmapImage);
-    }
-
     public void getToolbar(){
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -193,7 +184,7 @@ public class SignUpActivity extends AppCompatActivity {
         actionBar.setDisplayShowCustomEnabled(true); //커스터마이징 하기 위해 필요
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼, 디폴트로 true만 해도 백버튼이 생김
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp); //뒤로가기 버튼을 본인이 만든 아이콘으로 하기 위해 필요
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp); //뒤로가기 버튼을 본인이 만든 아이콘으로 하기 위해 필요
         actionBar.setTitle(null);
     }
     @Override

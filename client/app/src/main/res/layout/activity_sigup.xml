@@ -27,6 +27,20 @@
             android:fontFamily="@font/notosanscjkkr_regular"
             android:text="Sign up"
             android:textSize="90px" />
+
+        <Button
+            android:id="@+id/applyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:background="#00000000"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:text="SAVE"
+            android:textAlignment="center"
+            android:textColor="@color/LightGray"
+            android:textSize="60px" />
     </android.support.v7.widget.Toolbar>
 
     <TextView
@@ -38,12 +52,12 @@
         android:fontFamily="@font/notosanscjkkr_medium"
         android:text="Name"
         android:textColor="@color/LightGray"
-        android:textSize="60px" />
+        android:textSize="50px" />
 
     <EditText
         android:id="@+id/fnameInput"
         android:layout_width="625px"
-        android:layout_height="140px"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="80px"
         android:layout_marginTop="610px"
         android:backgroundTint="@color/LightGray"
@@ -52,12 +66,12 @@
         android:inputType="textPersonName"
         android:textColor="@color/Black"
         android:textColorHint="@color/LightGray"
-        android:textSize="75px" />
+        android:textSize="60px" />
 
     <EditText
         android:id="@+id/lnameInput"
         android:layout_width="625px"
-        android:layout_height="140px"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="735px"
         android:layout_marginTop="610px"
         android:backgroundTint="@color/LightGray"
@@ -66,40 +80,40 @@
         android:inputType="textPersonName"
         android:textColor="@color/Black"
         android:textColorHint="@color/LightGray"
-        android:textSize="75px" />
+        android:textSize="60px" />
 
     <TextView
         android:id="@+id/lblEmail"
         android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="80px"
         android:layout_marginTop="830px"
         android:fontFamily="@font/notosanscjkkr_medium"
         android:text="E-mail"
         android:textColor="@color/LightGray"
-        android:textSize="60px" />
+        android:textSize="50px" />
 
     <EditText
         android:id="@+id/aplyEmailInput"
         android:layout_width="1280px"
-        android:layout_height="140px"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="80px"
         android:layout_marginTop="915px"
         android:backgroundTint="@color/LightGray"
         android:fontFamily="@font/notosanscjkkr_medium"
         android:inputType="textEmailAddress"
         android:textColor="@color/Black"
-        android:textSize="75px" />
+        android:textSize="50px" />
 
     <TextView
-        android:layout_width="260px"
-        android:layout_height="140px"
-        android:layout_marginLeft="1100px"
+        android:layout_width="360px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1000px"
         android:layout_marginTop="915px"
         android:fontFamily="@font/notosanscjkkr_medium"
         android:text="\@email.com"
         android:textColor="@color/LightGray"
-        android:textSize="75px" />
+        android:textSize="50px" />
 
     <TextView
         android:id="@+id/lblPw"
@@ -110,19 +124,19 @@
         android:fontFamily="@font/notosanscjkkr_medium"
         android:text="Password"
         android:textColor="@color/LightGray"
-        android:textSize="60px" />
+        android:textSize="50px" />
 
     <EditText
         android:id="@+id/aplyPwInput"
         android:layout_width="1280px"
-        android:layout_height="140px"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="80px"
         android:layout_marginTop="1220px"
         android:backgroundTint="@color/LightGray"
         android:fontFamily="@font/notosanscjkkr_medium"
         android:inputType="textPassword"
         android:textColor="@color/Black"
-        android:textSize="75px" />
+        android:textSize="60px" />
 
     <TextView
         android:id="@+id/lblPwChk"
@@ -133,83 +147,66 @@
         android:fontFamily="@font/notosanscjkkr_medium"
         android:text="Confirm password"
         android:textColor="@color/LightGray"
-        android:textSize="60px" />
+        android:textSize="50px" />
 
     <EditText
         android:id="@+id/pwChkInput"
         android:layout_width="1280px"
-        android:layout_height="140px"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="80px"
         android:layout_marginTop="1525px"
         android:backgroundTint="@color/LightGray"
         android:fontFamily="@font/notosanscjkkr_medium"
         android:inputType="textPassword"
         android:textColor="@color/Black"
-        android:textSize="75px" />
+        android:textSize="60px" />
 
     <TextView
         android:id="@+id/lblBirth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80px"
-        android:layout_marginTop="1610px"
+        android:layout_marginTop="1745px"
         android:fontFamily="@font/notosanscjkkr_medium"
         android:text="Birthday"
         android:textColor="@color/LightGray"
-        android:textSize="60px" />
+        android:textSize="50px" />
 
     <Spinner
         android:id="@+id/monthSpinner"
         android:layout_width="600px"
         android:layout_height="140px"
         android:layout_marginLeft="80px"
-        android:layout_marginTop="1810px"   />
+        android:layout_marginTop="1840px" />
 
     <EditText
         android:id="@+id/dateInput"
         android:layout_width="310px"
-        android:layout_height="140px"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="710px"
-        android:layout_marginTop="1810px"
+        android:layout_marginTop="1840px"
         android:backgroundTint="@color/LightGray"
         android:fontFamily="@font/notosanscjkkr_medium"
-        android:hint="MM"
         android:gravity="center"
+        android:hint="MM"
         android:inputType="number"
         android:textColor="@color/Black"
         android:textColorHint="@color/LightGray"
-        android:textSize="75px" />
+        android:textSize="60px" />
 
     <EditText
         android:id="@+id/yearInput"
         android:layout_width="310px"
-        android:layout_height="140px"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="1050px"
-        android:layout_marginTop="1810px"
+        android:layout_marginTop="1840px"
         android:backgroundTint="@color/LightGray"
         android:fontFamily="@font/notosanscjkkr_medium"
-        android:hint="YYYY"
         android:gravity="center"
+        android:hint="YYYY"
         android:inputType="number"
         android:textColor="@color/Black"
         android:textColorHint="@color/LightGray"
-        android:textSize="75px" />/>
-
-
-    <Button
-        android:id="@+id/applyBtn"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/noto_sans"
-        android:text="Apply"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="60px" />
 
 </RelativeLayout>
