@@ -20,6 +20,7 @@
             android:layout_marginLeft="1215px"
             android:layout_width="225px"
             android:layout_height="225px"
+            android:background="#00000000"
             />
     </LinearLayout>
 
@@ -107,6 +108,9 @@
                         android:layout_marginLeft="15px"
                         android:layout_marginTop="10px"
                         android:background="@drawable/button_bg_round"
+                        android:src="@drawable/kihong"
+                        android:scaleType="fitXY"
+
                         android:padding="15px" />
                 </LinearLayout>
 
@@ -123,6 +127,9 @@
                         android:layout_marginLeft="15px"
                         android:layout_marginTop="10px"
                         android:background="@drawable/button_bg_round"
+                        android:src="@drawable/kyung"
+                        android:scaleType="fitXY"
+
                         android:padding="15px" />
                 </LinearLayout>
 
@@ -139,6 +146,9 @@
                         android:layout_marginLeft="15px"
                         android:layout_marginTop="10px"
                         android:background="@drawable/button_bg_round"
+                        android:src="@drawable/junhyuk"
+                        android:scaleType="fitXY"
+
                         android:padding="15px" />
                 </LinearLayout>
 

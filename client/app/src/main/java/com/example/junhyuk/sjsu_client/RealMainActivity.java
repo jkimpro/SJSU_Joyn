@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 public class RealMainActivity extends AppCompatActivity{
 
+    private static int fStatus;
 
     private int currentApiVersion;
 
@@ -20,6 +21,8 @@ public class RealMainActivity extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_real_main);
+
+        fStatus = 0;
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 4;
@@ -95,8 +98,47 @@ public class RealMainActivity extends AppCompatActivity{
     Button.OnClickListener friendButtonListener =
             new Button.OnClickListener(){
                 public void onClick(View v) {
-                    Intent intent = new Intent(RealMainActivity.this, FriendViewActivity.class);
-                    startActivity(intent);
+
+                    switch(v.getId())
+                    {
+                        case R.id.friendImage1: {
+
+                            Intent intent = new Intent(RealMainActivity.this, FriendViewActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("TEST_KEY", "1");
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                            break;
+                        }
+                        case R.id.friendImage2: {
+
+                            Intent intent = new Intent(RealMainActivity.this, FriendViewActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("TEST_KEY", "2");
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                            break;
+                        }
+                        case R.id.friendImage3: {
+
+                            Intent intent = new Intent(RealMainActivity.this, FriendViewActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("TEST_KEY", "3");
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                            break;
+                        }
+                        default:
+                        {
+
+                            Intent intent = new Intent(RealMainActivity.this, FriendViewActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("TEST_KEY", "0");
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                            break;
+                        }
+                    }
                 }
             };
 

@@ -20,7 +20,8 @@
             android:id="@+id/my_status"
             android:layout_width="225px"
             android:layout_height="225px"
-            android:layout_marginLeft="1210px" />
+            android:layout_marginLeft="1210px"
+            android:background="#00000000"/>
     </LinearLayout>
 
     <!--중간 레이아웃-->
@@ -38,14 +39,15 @@
             android:layout_height="220px"
             android:layout_marginTop="58px">
 
-            <ImageButton
+            <Button
                 android:id="@+id/joinOpenBt"
                 android:layout_width="200px"
                 android:layout_height="200px"
                 android:layout_marginLeft="1120px"
                 android:layout_marginTop="30px"
-                android:background="@drawable/button_bg_round"
-                android:padding="15px" />
+                android:background="#00000000"
+                android:padding="15px"
+                />
 
         </LinearLayout>
 
@@ -58,7 +60,7 @@
                 android:layout_height="100px"
                 android:layout_marginLeft="75px"
                 android:layout_marginTop="210px"
-                android:background="@drawable/button_bg_round"
+                android:background="#00000000"
                 android:padding="15px" />
 
             <ImageButton
@@ -66,7 +68,7 @@
                 android:layout_height="100px"
                 android:layout_marginLeft="1088px"
                 android:layout_marginTop="210px"
-                android:background="@drawable/button_bg_round"
+                android:background="#00000000"
                 android:padding="15px" />
         </LinearLayout>
 
@@ -108,6 +110,8 @@
                         android:layout_marginLeft="15px"
                         android:layout_marginTop="10px"
                         android:background="@drawable/button_bg_round"
+                        android:src="@drawable/kihong"
+                        android:scaleType="fitXY"
                         android:padding="15px" />
 
 
@@ -126,6 +130,9 @@
                         android:layout_marginLeft="15px"
                         android:layout_marginTop="10px"
                         android:background="@drawable/button_bg_round"
+                        android:src="@drawable/kyung"
+                        android:scaleType="fitXY"
+
                         android:padding="15px" />
 
 
@@ -144,6 +151,9 @@
                         android:layout_marginLeft="15px"
                         android:layout_marginTop="10px"
                         android:background="@drawable/button_bg_round"
+                        android:src="@drawable/junhyuk"
+                        android:scaleType="fitXY"
+
                         android:padding="15px" />
 
 
@@ -161,7 +171,7 @@
                         android:layout_height="200px"
                         android:layout_marginLeft="50px"
                         android:layout_marginTop="10px"
-                        android:background="@drawable/button_bg_round"
+                        android:background="#00000000"
                         android:padding="15px" />
 
                     <ImageButton
@@ -169,7 +179,7 @@
                         android:layout_width="200px"
                         android:layout_height="200px"
                         android:layout_marginTop="10px"
-                        android:background="@drawable/button_bg_round"
+                        android:background="#00000000"
                         android:padding="15px" />
 
                 </RelativeLayout>
@@ -187,14 +197,16 @@
         android:layout_height="140px"
         android:layout_marginLeft="140px"
         android:layout_marginTop="2630px"
-        android:background="@drawable/button_bg_round" />
+        android:background="@drawable/button_bg_round"
+        />
 
     <ImageButton
         android:layout_width="140px"
         android:layout_height="140px"
         android:layout_marginLeft="655px"
         android:layout_marginTop="2630px"
-        android:background="@drawable/button_bg_round" />
+        android:background="@drawable/button_bg_round"
+        />
 
     <ImageButton
         android:id="@+id/assignment"
@@ -202,5 +214,5 @@
         android:layout_height="140px"
         android:layout_marginLeft="1160px"
         android:layout_marginTop="2630px"
-        android:background="@drawable/button_bg_round" />
+        android:background="@drawable/button_bg_round"/>
 </RelativeLayout>

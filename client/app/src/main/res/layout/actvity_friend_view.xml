@@ -19,6 +19,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_bg_round"
+        android:scaleType="fitXY"
         android:padding="15px"
         android:layout_marginTop="167dp" />
 
