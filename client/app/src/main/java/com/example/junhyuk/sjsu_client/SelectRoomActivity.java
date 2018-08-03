@@ -35,12 +35,6 @@ public class SelectRoomActivity extends AppCompatActivity {
         ImageView imageView = (ImageView)findViewById(R.id.back);
         imageView.setImageBitmap(bitmapImage);
 
-        findViewById(R.id.friendImage1).setOnClickListener(friendButtonListener);
-        findViewById(R.id.friendImage2).setOnClickListener(friendButtonListener);
-        findViewById(R.id.friendImage3).setOnClickListener(friendButtonListener);
-        findViewById(R.id.friendImageElse1).setOnClickListener(friendButtonListener);
-        findViewById(R.id.friendImageElse2).setOnClickListener(friendButtonListener);
-
 
         //join -> joined , joined -> join 바뀌는것.
         findViewById(R.id.joinBt).setOnClickListener(new Button.OnClickListener(){
