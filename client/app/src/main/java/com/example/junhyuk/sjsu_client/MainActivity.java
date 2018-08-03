@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         email = findViewById(R.id.emailInput);
         pw = findViewById(R.id.pwInput);
-
         hideBar();
 
         btnLogin = (Button) findViewById(R.id.loginBtn);
